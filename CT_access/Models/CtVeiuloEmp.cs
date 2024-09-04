@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CT_access.Models
+﻿namespace CT_access.Models
 {
     public class CtVeiuloEmp
     {
         public int idVeiulo { get; set; }       
         public string Vigilante {  get; set; }
         public string itinerario { get; set; }
-        public DateTime data { get; set; }
+        public DateTime data { get; set; }=DateTime.Now.Date;
         public string horasaida { get; set; }
         public string horaentrada { get; set; }
         public string horfinal { get; set; }

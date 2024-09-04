@@ -135,34 +135,25 @@ namespace CT_access.DataAcess
 
         public void updateDados(CtVeiuloEmp ctVeiuloEmp)
         {
-            using (var connection = ConectionDb.Dbconection())
+            
+            using SQLiteConnection connecion = ConectionDb.Dbconection();
+            try
             {
-                try
-                {
-                    using (var cmd = connection.CreateCommand()) 
-                    {
-                        cmd.CommandText="UPDATE T_veiculoEmp SET h_entrada=@h_entrada,kmchentrada=@kmchentrada WHERE id=@id";
-                        cmd.Parameters.AddWithValue("@id", ctVeiuloEmp.idVeiulo);
-                        cmd.Parameters.AddWithValue("@h_entrada", ctVeiuloEmp.horaentrada);
-                        cmd.Parameters.AddWithValue("@kmchentrada", ctVeiuloEmp.kmchentrada);
-                        //cmd.ExecuteNonQuery();
-                        int rowsAfetadas = cmd.ExecuteNonQuery();
-                        if (rowsAfetadas > 0)
-                        {
-                            MessageBox.Show("Dados atualizados com sucesso!!!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nenhuma linha foi atualizada");
-                        }
-                    }
+                string sql = "UPDATE T_veiculoEmp SET h_entrada=@h_entrada,kmchentrada=@kmchentrada WHERE id=@id ";
+                using (var cmd = new SQLiteCommand(sql, connecion))
+                {   
+                    
+                    cmd.Parameters.AddWithValue("@h_entrada", ctVeiuloEmp.horaentrada);
+                    cmd.Parameters.AddWithValue("@kmchentrada", ctVeiuloEmp.kmchentrada);
+                    cmd.Parameters.AddWithValue("@id", ctVeiuloEmp.idVeiulo);
+                    cmd.ExecuteNonQuery();
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Erro ao atualizar dados" + e.Message);
-                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO ATUALIZAR DB" + ex.Message);
             }
-        }
+            }
+
 
         public void Getdados(int id)
         {

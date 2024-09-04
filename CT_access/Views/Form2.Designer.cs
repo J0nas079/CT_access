@@ -114,6 +114,7 @@
             // 
             // veiculosDaEmpresaToolStripMenuItem
             // 
+            veiculosDaEmpresaToolStripMenuItem.Image = (Image)resources.GetObject("veiculosDaEmpresaToolStripMenuItem.Image");
             veiculosDaEmpresaToolStripMenuItem.Name = "veiculosDaEmpresaToolStripMenuItem";
             veiculosDaEmpresaToolStripMenuItem.Size = new Size(269, 22);
             veiculosDaEmpresaToolStripMenuItem.Text = "Veiculos da Empresa";
@@ -468,6 +469,7 @@
             nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
             nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.Visible = false;
             // 
             // empresaDataGridViewTextBoxColumn
             // 

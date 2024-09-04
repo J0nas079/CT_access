@@ -45,10 +45,9 @@
             caminhaoBindingSource = new BindingSource(components);
             label1 = new Label();
             txtsearch = new TextBox();
-            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)caminhaoBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -61,10 +60,10 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, empresaDataGridViewTextBoxColumn, setorDataGridViewTextBoxColumn, placaDataGridViewTextBoxColumn, cnhDataGridViewTextBoxColumn, motoristaDataGridViewTextBoxColumn, autorizadoDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, hentradaDataGridViewTextBoxColumn, hsaidaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = caminhaoBindingSource;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(3, 73);
+            dataGridView1.Location = new Point(3, 85);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridView1.Size = new Size(794, 390);
+            dataGridView1.Size = new Size(796, 378);
             dataGridView1.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn
@@ -142,6 +141,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(255, 128, 0);
             label1.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(31, 26);
@@ -152,7 +152,7 @@
             // 
             // txtsearch
             // 
-            txtsearch.BackColor = Color.White;
+            txtsearch.BackColor = Color.FromArgb(224, 224, 224);
             txtsearch.Location = new Point(119, 26);
             txtsearch.Name = "txtsearch";
             txtsearch.PlaceholderText = "Pesquise aqui";
@@ -160,26 +160,25 @@
             txtsearch.TabIndex = 1;
             txtsearch.TextChanged += txtsearch_TextChanged;
             // 
-            // pictureBox1
+            // panel1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(17, 18);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.Location = new Point(3, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(796, 66);
+            panel1.TabIndex = 5;
             // 
             // FormCompleto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 465);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(802, 450);
             Controls.Add(txtsearch);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCompleto";
             StartPosition = FormStartPosition.CenterScreen;
@@ -187,7 +186,6 @@
             Load += FormCompleto_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)caminhaoBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,6 +207,6 @@
         private DataGridViewTextBoxColumn hsaidaDataGridViewTextBoxColumn;
         private Label label1;
         private TextBox txtsearch;
-        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

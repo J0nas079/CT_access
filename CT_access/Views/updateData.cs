@@ -6,13 +6,14 @@ namespace CT_access.Views
     //PASSANDO OS DADOS PARA A TELA DE ATUALIZAÇÃO 
     public partial class updateData : Form
     {
-        public updateData(string kmEntrada, string h_entrada)
+        public updateData(string h_entrada,string kmEntrada,string id)
         {
             InitializeComponent();
 
             //maskHREntrada.Text = h_entrada;
             txtKMentra.Text = kmEntrada;
             maskHREntrada.Text = h_entrada;
+            txtid.Text = id;
             //maskdataEntrada.Text = Convert.ToDateTime(kmEntrada).ToString();
 
         }
@@ -24,9 +25,13 @@ namespace CT_access.Views
             {
                 ctVeiuloEmp.horaentrada = maskHREntrada.Text;
                 ctVeiuloEmp.kmchentrada = txtKMentra.Text;
+                ctVeiuloEmp.idVeiulo =Convert.ToInt32(txtid.Text);
                 //ctVeiuloEmp.Date_entrada = Convert.ToDateTime(maskdataEntrada.Text);
                 veiculos.updateDados(ctVeiuloEmp);
                 lblok.Text = "Dados Atualizado!!";
+                maskHREntrada.Clear();
+                txtKMentra.Clear();
+                
             }
             catch (Exception ex)
             {
@@ -38,7 +43,8 @@ namespace CT_access.Views
 
         private void updateData_Load(object sender, EventArgs e)
         {
-            maskdataEntrada.Focus();
+            txtid.Enabled=false;
+            txtid.Focus();
         }
     }
 }

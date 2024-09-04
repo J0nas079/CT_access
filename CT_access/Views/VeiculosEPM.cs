@@ -20,7 +20,6 @@ namespace CT_access.Views
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
         }
-
         private void VeiculosEPM_Load(object sender, EventArgs e)
         {
             CtVeiuloEmp ctVeiuloEmp = new CtVeiuloEmp();
@@ -28,10 +27,9 @@ namespace CT_access.Views
             List<CtVeiuloEmp> CTCaminhao = veiculosEPM.GetVeiculos();
             dataGridView1.DataSource= CTCaminhao;
         }
-
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            //
+           
         }
     }
 }

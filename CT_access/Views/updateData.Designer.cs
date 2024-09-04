@@ -32,12 +32,12 @@
             label2 = new Label();
             txtKMentra = new TextBox();
             maskHREntrada = new MaskedTextBox();
-            maskdataEntrada = new MaskedTextBox();
             button1 = new Button();
             label4 = new Label();
             panel1 = new Panel();
             lblok = new Label();
             panel2 = new Panel();
+            txtid = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,15 +75,6 @@
             maskHREntrada.TabIndex = 3;
             maskHREntrada.ValidatingType = typeof(DateTime);
             // 
-            // maskdataEntrada
-            // 
-            maskdataEntrada.Location = new Point(179, 99);
-            maskdataEntrada.Mask = "00/00/0000";
-            maskdataEntrada.Name = "maskdataEntrada";
-            maskdataEntrada.Size = new Size(142, 24);
-            maskdataEntrada.TabIndex = 1;
-            maskdataEntrada.ValidatingType = typeof(DateTime);
-            // 
             // button1
             // 
             button1.Location = new Point(198, 243);
@@ -117,7 +108,7 @@
             // 
             lblok.BackColor = Color.White;
             lblok.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblok.ForeColor = Color.Green;
+            lblok.ForeColor = Color.Red;
             lblok.Location = new Point(119, 14);
             lblok.Name = "lblok";
             lblok.Size = new Size(182, 20);
@@ -132,17 +123,24 @@
             panel2.Size = new Size(432, 43);
             panel2.TabIndex = 13;
             // 
+            // txtid
+            // 
+            txtid.Location = new Point(188, 103);
+            txtid.Name = "txtid";
+            txtid.Size = new Size(31, 24);
+            txtid.TabIndex = 14;
+            // 
             // updateData
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
             ClientSize = new Size(432, 380);
+            Controls.Add(txtid);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label4);
             Controls.Add(button1);
-            Controls.Add(maskdataEntrada);
             Controls.Add(maskHREntrada);
             Controls.Add(txtKMentra);
             Controls.Add(label2);
@@ -163,11 +161,11 @@
         private Label label2;
         private TextBox txtKMentra;
         private MaskedTextBox maskHREntrada;
-        private MaskedTextBox maskdataEntrada;
         private Button button1;
         private Label label4;
         private Panel panel1;
         private Panel panel2;
         private Label lblok;
+        private TextBox txtid;
     }
 }

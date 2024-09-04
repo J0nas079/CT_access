@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CT_access.Models
+﻿namespace CT_access.Models
 {
     public class Caminhao
     {
@@ -16,7 +10,7 @@ namespace CT_access.Models
         public string cnh {  get; set; }
         public string motorista { get; set; }
         public string autorizado { get; set; }
-        public DateTime data {  get; set; }
+        public DateTime data { get; set; }= DateTime.Now.Date;
         public string h_entrada { get; set; }
         public string h_saida { get;set; }
     }

@@ -59,6 +59,7 @@
             txtObs = new TextBox();
             dataGridView1 = new DataGridView();
             ctVeiuloEmpBindingSource = new BindingSource(components);
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
@@ -352,7 +353,7 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dateentradaDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dateentradaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = ctVeiuloEmpBindingSource;
             dataGridView1.Location = new Point(31, 288);
             dataGridView1.Name = "dataGridView1";
@@ -363,6 +364,12 @@
             // ctVeiuloEmpBindingSource
             // 
             ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "idVeiulo";
+            dataGridViewTextBoxColumn2.HeaderText = "idVeiulo";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -379,49 +386,49 @@
             // dataGridViewTextBoxColumn5
             // 
             dataGridViewTextBoxColumn5.DataPropertyName = "data";
-            dataGridViewTextBoxColumn5.HeaderText = "data";
+            dataGridViewTextBoxColumn5.HeaderText = "Data";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             dataGridViewTextBoxColumn6.DataPropertyName = "horasaida";
-            dataGridViewTextBoxColumn6.HeaderText = "horasaida";
+            dataGridViewTextBoxColumn6.HeaderText = "Hora/saida";
             dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
             dataGridViewTextBoxColumn7.DataPropertyName = "horaentrada";
-            dataGridViewTextBoxColumn7.HeaderText = "horaentrada";
+            dataGridViewTextBoxColumn7.HeaderText = "Hora/Entrada";
             dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
             dataGridViewTextBoxColumn8.DataPropertyName = "horfinal";
-            dataGridViewTextBoxColumn8.HeaderText = "horfinal";
+            dataGridViewTextBoxColumn8.HeaderText = "Hora/Final";
             dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn9
             // 
             dataGridViewTextBoxColumn9.DataPropertyName = "kmSaida";
-            dataGridViewTextBoxColumn9.HeaderText = "kmSaida";
+            dataGridViewTextBoxColumn9.HeaderText = "Km/Saida";
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn10
             // 
             dataGridViewTextBoxColumn10.DataPropertyName = "kmchentrada";
-            dataGridViewTextBoxColumn10.HeaderText = "kmchentrada";
+            dataGridViewTextBoxColumn10.HeaderText = "km/Retorno";
             dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // dataGridViewTextBoxColumn11
             // 
             dataGridViewTextBoxColumn11.DataPropertyName = "kmrodados";
-            dataGridViewTextBoxColumn11.HeaderText = "kmrodados";
+            dataGridViewTextBoxColumn11.HeaderText = "Km/Rodados";
             dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // dataGridViewTextBoxColumn12
             // 
             dataGridViewTextBoxColumn12.DataPropertyName = "motorista";
-            dataGridViewTextBoxColumn12.HeaderText = "motorista";
+            dataGridViewTextBoxColumn12.HeaderText = "Motorista";
             dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // dataGridViewTextBoxColumn13
@@ -441,6 +448,7 @@
             dateentradaDataGridViewTextBoxColumn.DataPropertyName = "Date_entrada";
             dateentradaDataGridViewTextBoxColumn.HeaderText = "Date_entrada";
             dateentradaDataGridViewTextBoxColumn.Name = "dateentradaDataGridViewTextBoxColumn";
+            dateentradaDataGridViewTextBoxColumn.Visible = false;
             // 
             // V_empresa
             // 
@@ -477,6 +485,7 @@
             Controls.Add(maskDataAtual);
             Controls.Add(label2);
             Controls.Add(label1);
+            Font = new Font("Antique Olive", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "V_empresa";
             Text = "V_empresa";
             Load += V_empresa_Load;
@@ -534,6 +543,8 @@
         private DataGridViewTextBoxColumn motoristaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
         private DataGridView dataGridView1;
+        private BindingSource ctVeiuloEmpBindingSource;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -547,6 +558,5 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private DataGridViewTextBoxColumn dateentradaDataGridViewTextBoxColumn;
-        private BindingSource ctVeiuloEmpBindingSource;
     }
 }

@@ -11,7 +11,6 @@ namespace CT_access
         public Form2()
         {
             InitializeComponent();
-
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -132,18 +131,28 @@ namespace CT_access
                 {
                     caminhao.motorista = txtmotorista.Text;
                 }
+                DateTime parsedDate;
+                string format = "dd/MM/yyyy"; // Defina o formato esperado
 
-                if (String.IsNullOrWhiteSpace(txtautorizado.Text))
+                if (DateTime.TryParseExact(maskData.Text, format, null, System.Globalization.DateTimeStyles.None, out parsedDate))
                 {
-                    MessageBox.Show("Favor informar o setor solicitante.");
-                    return;
+                    caminhao.data = parsedDate;
+                    MessageBox.Show("Data atribuída com sucesso: " + caminhao.data.ToString("dd/MM/yyyy"));
                 }
                 else
                 {
-                    caminhao.autorizado = txtautorizado.Text;
-                    caminhao.data = Convert.ToDateTime(maskData.Text);
+                    MessageBox.Show("Formato de data inválido. Use o formato " + format);
                 }
+                if (!String.IsNullOrEmpty(txtautorizado.Text))
+                {
+                  caminhao.autorizado= txtautorizado.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Favor informar o setor autorizado");
+                    return;
 
+                }
                 // Inserção no banco de dados
                 fluxo.AdcionarCaminhao(caminhao);
                 MessageBox.Show("Dados Inseridos com suceso" + MessageBoxButtons.OK);
@@ -162,7 +171,7 @@ namespace CT_access
         {
             FormCompleto formCompleto = new FormCompleto();
 
-            formCompleto.ShowDialog();
+            formCompleto.Show();
 
         }
 
@@ -197,5 +206,6 @@ namespace CT_access
                 //MessageBox.Show(txtempresa.Text);
             }
         }
+
     }
 }

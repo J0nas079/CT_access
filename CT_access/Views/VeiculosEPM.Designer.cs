@@ -48,14 +48,16 @@
             motoristaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             matriculaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ctVeiuloEmpBindingSource = new BindingSource(components);
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiuloEmpBindingSource).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtsearch
             // 
             txtsearch.BackColor = Color.White;
-            txtsearch.Location = new Point(119, 7);
+            txtsearch.Location = new Point(115, 19);
             txtsearch.Name = "txtsearch";
             txtsearch.PlaceholderText = "Pesquise aqui";
             txtsearch.Size = new Size(210, 23);
@@ -67,7 +69,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(31, 10);
+            label1.Location = new Point(27, 18);
             label1.Name = "label1";
             label1.Size = new Size(82, 20);
             label1.TabIndex = 3;
@@ -91,7 +93,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idVeiuloDataGridViewTextBoxColumn, observacoesDataGridViewTextBoxColumn, vigilanteDataGridViewTextBoxColumn, itinerarioDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, horasaidaDataGridViewTextBoxColumn, horaentradaDataGridViewTextBoxColumn, horfinalDataGridViewTextBoxColumn, kmSaidaDataGridViewTextBoxColumn, kmchentradaDataGridViewTextBoxColumn, kmrodadosDataGridViewTextBoxColumn, motoristaDataGridViewTextBoxColumn, matriculaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = ctVeiuloEmpBindingSource;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(3, 54);
+            dataGridView1.Location = new Point(3, 85);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.Red;
@@ -101,7 +103,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Size = new Size(798, 384);
+            dataGridView1.Size = new Size(796, 378);
             dataGridView1.TabIndex = 5;
             // 
             // idVeiuloDataGridViewTextBoxColumn
@@ -188,21 +190,32 @@
             // 
             ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(txtsearch);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(796, 66);
+            panel1.TabIndex = 6;
+            // 
             // VeiculosEPM
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(802, 450);
-            Controls.Add(txtsearch);
-            Controls.Add(label1);
             Controls.Add(dataGridView1);
+            Controls.Add(panel1);
             Name = "VeiculosEPM";
             Text = "VeiculosEPM";
             Load += VeiculosEPM_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiuloEmpBindingSource).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -224,5 +237,6 @@
         private DataGridViewTextBoxColumn kmrodadosDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn motoristaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
+        private Panel panel1;
     }
 }
