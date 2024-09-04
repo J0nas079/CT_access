@@ -1,6 +1,5 @@
 # CT_access
-- C#
-- SQLITE
+
 
 
 ## Controle de Fluxo de acessos para pessoas e veiculos em empresas privadas
@@ -24,5 +23,10 @@ Nessa tela, o processo de exibição de dados segue o mesmo parametro da tela an
 ## Na aba de visualização você consegue verificar todos os dados cadastrados de todos os periódos 
 No momento o filtro de pesquisa é feito por nome de empresa
 ![image](https://github.com/user-attachments/assets/31ae3492-7822-48e1-8104-a37bc565085b)
+
+## Tecnologias
+- C#
+- SQLITE
+- Windows Forms
 
 
