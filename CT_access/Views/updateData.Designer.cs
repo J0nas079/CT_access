@@ -35,16 +35,18 @@
             button1 = new Button();
             label4 = new Label();
             panel1 = new Panel();
-            lblok = new Label();
-            panel2 = new Panel();
             txtid = new TextBox();
+            label3 = new Label();
+            maskdata = new MaskedTextBox();
+            lblok = new Label();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(64, 203);
+            label1.Location = new Point(70, 203);
             label1.Name = "label1";
             label1.Size = new Size(98, 16);
             label1.TabIndex = 2;
@@ -53,15 +55,15 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(74, 108);
+            label2.Location = new Point(142, 86);
             label2.Name = "label2";
-            label2.Size = new Size(95, 16);
+            label2.Size = new Size(20, 16);
             label2.TabIndex = 0;
-            label2.Text = "Data/Retorno";
+            label2.Text = "id";
             // 
             // txtKMentra
             // 
-            txtKMentra.Location = new Point(179, 151);
+            txtKMentra.Location = new Point(179, 160);
             txtKMentra.Name = "txtKMentra";
             txtKMentra.Size = new Size(142, 24);
             txtKMentra.TabIndex = 2;
@@ -77,7 +79,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(198, 243);
+            button1.Location = new Point(179, 243);
             button1.Name = "button1";
             button1.Size = new Size(86, 25);
             button1.TabIndex = 4;
@@ -88,7 +90,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(82, 155);
+            label4.Location = new Point(82, 164);
             label4.Name = "label4";
             label4.Size = new Size(86, 16);
             label4.TabIndex = 11;
@@ -99,10 +101,35 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(lblok);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 337);
+            panel1.Location = new Point(0, 291);
             panel1.Name = "panel1";
-            panel1.Size = new Size(432, 43);
+            panel1.Size = new Size(432, 44);
             panel1.TabIndex = 12;
+            // 
+            // txtid
+            // 
+            txtid.Location = new Point(188, 83);
+            txtid.Name = "txtid";
+            txtid.Size = new Size(31, 24);
+            txtid.TabIndex = 14;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(82, 122);
+            label3.Name = "label3";
+            label3.Size = new Size(86, 16);
+            label3.TabIndex = 15;
+            label3.Text = "Data Retoro";
+            // 
+            // maskdata
+            // 
+            maskdata.Location = new Point(179, 121);
+            maskdata.Mask = "00/00/0000";
+            maskdata.Name = "maskdata";
+            maskdata.Size = new Size(103, 24);
+            maskdata.TabIndex = 16;
+            maskdata.ValidatingType = typeof(DateTime);
             // 
             // lblok
             // 
@@ -114,30 +141,23 @@
             lblok.Size = new Size(182, 20);
             lblok.TabIndex = 0;
             // 
-            // panel2
+            // groupBox1
             // 
-            panel2.BackColor = Color.White;
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(432, 43);
-            panel2.TabIndex = 13;
-            // 
-            // txtid
-            // 
-            txtid.Location = new Point(188, 103);
-            txtid.Name = "txtid";
-            txtid.Size = new Size(31, 24);
-            txtid.TabIndex = 14;
+            groupBox1.Location = new Point(63, 33);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(287, 226);
+            groupBox1.TabIndex = 17;
+            groupBox1.TabStop = false;
             // 
             // updateData
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
-            ClientSize = new Size(432, 380);
+            ClientSize = new Size(432, 335);
+            Controls.Add(maskdata);
+            Controls.Add(label3);
             Controls.Add(txtid);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -145,6 +165,7 @@
             Controls.Add(txtKMentra);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(groupBox1);
             Font = new Font("Antique Olive", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "updateData";
@@ -164,8 +185,10 @@
         private Button button1;
         private Label label4;
         private Panel panel1;
-        private Panel panel2;
-        private Label lblok;
         private TextBox txtid;
+        private Label label3;
+        private MaskedTextBox maskdata;
+        private Label lblok;
+        private GroupBox groupBox1;
     }
 }

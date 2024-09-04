@@ -6,7 +6,7 @@ namespace CT_access.Views
     //PASSANDO OS DADOS PARA A TELA DE ATUALIZAÇÃO 
     public partial class updateData : Form
     {
-        public updateData(string h_entrada,string kmEntrada,string id)
+        public updateData(string h_entrada,string kmEntrada,string id,string dataAtual)
         {
             InitializeComponent();
 
@@ -14,6 +14,7 @@ namespace CT_access.Views
             txtKMentra.Text = kmEntrada;
             maskHREntrada.Text = h_entrada;
             txtid.Text = id;
+            maskdata.Text = dataAtual;
             //maskdataEntrada.Text = Convert.ToDateTime(kmEntrada).ToString();
 
         }
