@@ -1,8 +1,11 @@
 ﻿using CT_access.Interface;
 using CT_access.Models;
 using System.Data;
+using System.Data.Common;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Security.Cryptography;
+using System.Security.Policy;
 
 namespace CT_access.DataAcess
 {
@@ -34,15 +37,16 @@ namespace CT_access.DataAcess
             }
 
         public List<CtVeiuloEmp> GetVeiculos()
-        {
+        {var t_carros = new List<CtVeiuloEmp>();
             try
             {
-                using(var connection =ConectionDb.Dbconection())
+                
+                using (var connection =ConectionDb.Dbconection())
                 {
                     using SQLiteConnection con = ConectionDb.Dbconection();
                     DataTable dt = new DataTable();
                     SQLiteDataAdapter da = null;
-                    var t_carros = new List<CtVeiuloEmp>();
+                    
                     string sql = @"SELECT * FROM T_veiculoEmp";
                     using(var cmd=new SQLiteCommand(sql, connection))
                     using(var reader= cmd.ExecuteReader())
@@ -67,8 +71,8 @@ namespace CT_access.DataAcess
                                 //Date_entrada = Convert.ToDateTime(reader["data_entrada"]).ToLocalTime(),
                             };
                             t_carros.Add(car);
-                            da = new SQLiteDataAdapter(sql,connection);
-                            da.Fill(dt);
+                           // da = new SQLiteDataAdapter(sql,connection);
+                            //da.Fill(dt);
                         }
                        
                     }
@@ -79,7 +83,8 @@ namespace CT_access.DataAcess
             }catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return new List<CtVeiuloEmp>();
+                //return new List<CtVeiuloEmp>();
+                return t_carros;
             }
        
         }
@@ -158,6 +163,54 @@ namespace CT_access.DataAcess
         public void Getdados(int id)
         {
             throw new NotImplementedException();
+        }
+        // Método para buscar veículos com filtro de motorista
+        public static List<CtVeiuloEmp> SearchCaminhao(string motorista)
+        {
+            var listaVeiculos = new List<CtVeiuloEmp>();
+
+            try
+            {
+                using (var connection = ConectionDb.Dbconection())
+                {
+                    string sql = @"SELECT * FROM T_veiculoEmp WHERE motorista LIKE @motorista";
+
+                    using (var cmd = new SQLiteCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@motorista", "%" + motorista + "%");
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var car = new CtVeiuloEmp
+                                {
+                                    idVeiulo = reader.GetInt32(reader.GetOrdinal("id")),
+                                    data = Convert.ToDateTime(reader["data"]).ToLocalTime(),
+                                    itinerario = reader["itinerario"].ToString(),
+                                    horasaida = reader["h_saida"].ToString(),
+                                    horaentrada = reader["h_entrada"].ToString(),
+                                    horfinal = reader["h_final"].ToString(),
+                                    kmSaida = reader["kmSaida"].ToString(),
+                                    kmchentrada = reader["kmchentrada"].ToString(),
+                                    kmrodados = reader["kmrodados"].ToString(),
+                                    motorista = reader["motorista"].ToString(),
+                                    Observacoes = reader["Observacoes"].ToString(),
+                                    Vigilante = reader["Vigilante"].ToString(),
+                                    Matricula = reader["Matricula"].ToString(),
+                                };
+                                listaVeiculos.Add(car);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao buscar os dados: " + ex.Message);
+            }
+
+            return listaVeiculos;
         }
     }
 }

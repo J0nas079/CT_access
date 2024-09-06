@@ -1,15 +1,6 @@
 ﻿using CT_access.DataAcess;
-using CT_access.Interface;
 using CT_access.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CT_access.Views
 {
@@ -25,11 +16,30 @@ namespace CT_access.Views
             CtVeiuloEmp ctVeiuloEmp = new CtVeiuloEmp();
             VeiculosEmpDAO veiculosEPM = new VeiculosEmpDAO();
             List<CtVeiuloEmp> CTCaminhao = veiculosEPM.GetVeiculos();
-            dataGridView1.DataSource= CTCaminhao;
+            dataGridView1.DataSource = CTCaminhao;
+            txtsearch.Focus();
         }
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-           
+            VeiculosEmpDAO ctveiculos = new VeiculosEmpDAO();
+            List<CtVeiuloEmp> veiculos = new List<CtVeiuloEmp>();
+
+            // Verificar se há texto para pesquisa
+            if (txtsearch.Text != string.Empty)
+            {
+                string motorista = txtsearch.Text;
+                // Obter a lista filtrada de acordo com o motorista e atribuir o retorno à variável
+                veiculos = VeiculosEmpDAO.SearchCaminhao(motorista);
+            }
+            else
+            {
+                // Obter todos os veículos quando não há pesquisa
+                veiculos = ctveiculos.GetVeiculos();
+            }
+
+            // Definir a lista como fonte de dados para o DataGridView
+            dataGridView1.DataSource = veiculos;
         }
+
     }
 }
