@@ -58,7 +58,6 @@
             label13 = new Label();
             txtObs = new TextBox();
             dataGridView1 = new DataGridView();
-            ctVeiuloEmpBindingSource = new BindingSource(components);
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -73,6 +72,7 @@
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dateentradaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ctVeiuloEmpBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiuloEmpBindingSource).BeginInit();
             SuspendLayout();
@@ -361,10 +361,6 @@
             dataGridView1.TabIndex = 15;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
-            // ctVeiuloEmpBindingSource
-            // 
-            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.DataPropertyName = "idVeiulo";
@@ -450,11 +446,15 @@
             dateentradaDataGridViewTextBoxColumn.Name = "dateentradaDataGridViewTextBoxColumn";
             dateentradaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // ctVeiuloEmpBindingSource
+            // 
+            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
+            // 
             // V_empresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(850, 503);
             Controls.Add(label13);
             Controls.Add(txtObs);

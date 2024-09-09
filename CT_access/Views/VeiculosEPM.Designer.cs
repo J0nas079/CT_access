@@ -59,7 +59,7 @@
             txtsearch.BackColor = Color.White;
             txtsearch.Location = new Point(115, 19);
             txtsearch.Name = "txtsearch";
-            txtsearch.PlaceholderText = "Pesquise aqui";
+            txtsearch.PlaceholderText = "Informe o nome do Motorista";
             txtsearch.Size = new Size(210, 23);
             txtsearch.TabIndex = 4;
             txtsearch.TextChanged += txtsearch_TextChanged;
@@ -205,6 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(802, 450);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);

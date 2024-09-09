@@ -9,13 +9,10 @@ namespace CT_access.Views
         public updateData(string h_entrada,string kmEntrada,string id,string dataAtual)
         {
             InitializeComponent();
-
-            //maskHREntrada.Text = h_entrada;
             txtKMentra.Text = kmEntrada;
             maskHREntrada.Text = h_entrada;
             txtid.Text = id;
             maskdata.Text = dataAtual;
-            //maskdataEntrada.Text = Convert.ToDateTime(kmEntrada).ToString();
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -27,19 +24,18 @@ namespace CT_access.Views
                 ctVeiuloEmp.horaentrada = maskHREntrada.Text;
                 ctVeiuloEmp.kmchentrada = txtKMentra.Text;
                 ctVeiuloEmp.idVeiulo =Convert.ToInt32(txtid.Text);
-                //ctVeiuloEmp.Date_entrada = Convert.ToDateTime(maskdataEntrada.Text);
                 veiculos.updateDados(ctVeiuloEmp);
-                lblok.Text = "Dados Atualizado!!";
+                lblATT.ForeColor=Color.Red;
+                lblATT.Text = "Dados Atualizados";
                 maskHREntrada.Clear();
                 txtKMentra.Clear();
                 
             }
             catch (Exception ex)
             {
-                lblok.ForeColor=Color.Red;
-                lblok.Text="Erro ao atualizar dados"+ex.Message;
+                lblATT.ForeColor= Color.Red;
+                lblATT.Text = "Erro ao atualizar";
             }
-
         }
 
         private void updateData_Load(object sender, EventArgs e)

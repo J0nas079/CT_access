@@ -43,16 +43,15 @@ namespace CT_access.DataAcess
                 using (var cmd = Dbconection().CreateCommand())
                 {
                     cmd.CommandText = "CREATE TABLE IF NOT EXISTS T_CtVeiculosTercei(id_veiculosTer INTEGER PRIMARY KEY AUTOINCREMENT," +
-                        "movimento TEXT," +
+                        "empresa TEXT," +
                         "data DATETIME," +
                         "horaEntrada VARCHAR(10)," +
                         "horaSaida VARCHAR(10)," +
-                        "horaFinal VARCHAR(10)," +
-                        "motorista TEXT," +
-                        "veiculo TEXT," +
-                        "placa VARCHAR(8)," +
-                        "notFiscal TEXT," +
-                        "observacao VARCHAR(100))";
+                        "nome VARCHAR(10)," +
+                        "placa TEXT," +
+                        "fabrica VARCHAR(8)," +
+                        "autorizado VARCHAR(20))," +
+                        "cnh VARCHAR(20)";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -61,8 +60,7 @@ namespace CT_access.DataAcess
                     cmd.CommandText = "CREATE TABLE IF NOT EXISTS T_caminhoes(" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "data DATIME DEFAULT CURRENT_TIMESTAMP," +
-                        "empre" +
-                        "sa VARCHAR(50)," +
+                        "empresa VARCHAR(50)," +
                         "placa VARCHAR(25)," +
                         "setor VARCHAR(50)," +
                         "h_entrada VARCHAR(10)," +
@@ -95,8 +93,14 @@ namespace CT_access.DataAcess
             {
                 MessageBox.Show("ERRO ao criar tabela" + ex);
             }
-
         }
+        //private static void usuarioPadrao()
+        //{
+        //    using (var cmd = Dbconection().CreateCommand())
+        //    {
+        //        cmd.CommandText="CREATE"
+        //    }
+        //}
     }
 
 }

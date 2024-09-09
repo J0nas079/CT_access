@@ -63,7 +63,7 @@
             dataGridView1.Location = new Point(3, 85);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridView1.Size = new Size(796, 378);
+            dataGridView1.Size = new Size(796, 344);
             dataGridView1.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn
@@ -155,7 +155,7 @@
             txtsearch.BackColor = Color.FromArgb(224, 224, 224);
             txtsearch.Location = new Point(119, 26);
             txtsearch.Name = "txtsearch";
-            txtsearch.PlaceholderText = "Pesquise aqui";
+            txtsearch.PlaceholderText = "Informe o nome da empresa";
             txtsearch.Size = new Size(210, 23);
             txtsearch.TabIndex = 1;
             txtsearch.TextChanged += txtsearch_TextChanged;
@@ -173,7 +173,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(802, 450);
             Controls.Add(txtsearch);
             Controls.Add(label1);

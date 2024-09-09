@@ -1,11 +1,7 @@
 ﻿using CT_access.Interface;
 using CT_access.Models;
 using System.Data;
-using System.Data.Common;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Security.Cryptography;
-using System.Security.Policy;
 
 namespace CT_access.DataAcess
 {
@@ -37,7 +33,8 @@ namespace CT_access.DataAcess
             }
 
         public List<CtVeiuloEmp> GetVeiculos()
-        {var t_carros = new List<CtVeiuloEmp>();
+        {
+            var t_carros = new List<CtVeiuloEmp>();
             try
             {
                 
@@ -71,10 +68,7 @@ namespace CT_access.DataAcess
                                 //Date_entrada = Convert.ToDateTime(reader["data_entrada"]).ToLocalTime(),
                             };
                             t_carros.Add(car);
-                           // da = new SQLiteDataAdapter(sql,connection);
-                            //da.Fill(dt);
                         }
-                       
                     }
                     return t_carros;
 
@@ -83,10 +77,8 @@ namespace CT_access.DataAcess
             }catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                //return new List<CtVeiuloEmp>();
                 return t_carros;
-            }
-       
+            }     
         }
 
         public void SetVeiculos(CtVeiuloEmp ctVeiuloEmp)
@@ -158,8 +150,6 @@ namespace CT_access.DataAcess
                 MessageBox.Show("ERRO AO ATUALIZAR DB" + ex.Message);
             }
             }
-
-
         public void Getdados(int id)
         {
             throw new NotImplementedException();

@@ -11,15 +11,16 @@ namespace CT_access
         public Form2()
         {
             InitializeComponent();
+            masksaida.Enabled = false;
         }
         private void Form2_Load(object sender, EventArgs e)
         {
             txtempresa.Focus();
             cbx01.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            Form1 form1 = new Form1(); // felipe: se quiser uma form de login ou uma que seja antes, cria ela no load
-            form1.ShowDialog(); // felipe: depois abre como dialog
-            if (form1.DialogResult == DialogResult.OK) // felipe: se o result dessa form for OK, continua pra main
+     
+            Form1 form1 = new Form1(); // se quiser uma form de login ou uma que seja antes, cria ela no load
+            form1.ShowDialog(); // depois abre como dialog
+            if (form1.DialogResult == DialogResult.OK) // se o result dessa form for OK, continua pra main
             {
                 WindowState = FormWindowState.Maximized;
                 ConectionDb.Dbconection();
@@ -27,18 +28,14 @@ namespace CT_access
                 LimparCampos();
                 AtualizarDatagrade();
             }
-            else // felipe: se não for, fecha tudo
+            else //  se não for, fecha tudo
             {
                 Environment.Exit(Environment.ExitCode);
             }
 
-
-            //MessageBox.Show(maskData.ToString());
-
         }
-        public void LimparCampos()
+        private void LimparCampos()
         {
-
             maskData.Enabled = false;
             maskData.Text = DateTime.Now.ToString();
             maskentrada.Clear();
@@ -49,15 +46,12 @@ namespace CT_access
             txtempresa.Clear();
             txtmotorista.Clear();
             txtplaca.Clear();
-            // datagridview.DataSource = null
         }
 
         public void AtualizarDatagrade()
         {
             FluxoDAO fx = new FluxoDAO();
-            //DataTable caminhaos = FluxoDAO.GetCaminhao();
             DataTable dt = new DataTable();
-            //datagradeView.DataSource = dt;
             List<Caminhao> caminhaos = fx.ObterCaminhao();
             datagradeView.DataSource = caminhaos;
         }
@@ -66,7 +60,6 @@ namespace CT_access
         {
             Caminhao caminhao = new Caminhao();
             FluxoDAO fluxo = new FluxoDAO();
-
 
             try
             {
@@ -137,7 +130,6 @@ namespace CT_access
                 if (DateTime.TryParseExact(maskData.Text, format, null, System.Globalization.DateTimeStyles.None, out parsedDate))
                 {
                     caminhao.data = parsedDate;
-                    MessageBox.Show("Data atribuída com sucesso: " + caminhao.data.ToString("dd/MM/yyyy"));
                 }
                 else
                 {
@@ -145,7 +137,7 @@ namespace CT_access
                 }
                 if (!String.IsNullOrEmpty(txtautorizado.Text))
                 {
-                  caminhao.autorizado= txtautorizado.Text;
+                    caminhao.autorizado = txtautorizado.Text;
                 }
                 else
                 {
@@ -157,7 +149,6 @@ namespace CT_access
                 fluxo.AdcionarCaminhao(caminhao);
                 MessageBox.Show("Dados Inseridos com suceso" + MessageBoxButtons.OK);
 
-                // Limpeza dos campos
                 LimparCampos();
             }
             catch (Exception ex)
@@ -172,40 +163,79 @@ namespace CT_access
             FormCompleto formCompleto = new FormCompleto();
 
             formCompleto.Show();
-
         }
-
         private void veiculosDaEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             V_empresa v_Empresa = new V_empresa();
             v_Empresa.ShowDialog();
         }
-
         private void veiculosEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VeiculosEPM veiculos = new VeiculosEPM();
-            veiculos.ShowDialog();
+            veiculos.Show();
         }
 
         private void datagradeView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
-                VeiculosEmpDAO vei=new VeiculosEmpDAO();
+                VeiculosEmpDAO vei = new VeiculosEmpDAO();
 
-                
-                txtempresa.Text = datagradeView.CurrentRow.Cells[2].Value.ToString();
-                txtplaca.Text = datagradeView.CurrentRow.Cells[3].Value.ToString();
-                cbx01.Text = datagradeView.CurrentRow.Cells[4].Value.ToString();
-                maskentrada.Text = datagradeView.CurrentRow.Cells[5].Value.ToString();
-                masksaida.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
-                txtcnh.Text = datagradeView.CurrentRow.Cells[7].Value.ToString();
-                txtmotorista.Text = datagradeView.CurrentRow.Cells[8].Value.ToString();
-                txtautorizado.Text = datagradeView.CurrentRow.Cells[9].Value.ToString();
 
-                //MessageBox.Show(txtempresa.Text);
+                //txtempresa.Text = datagradeView.CurrentRow.Cells[2].Value.ToString();
+                //txtplaca.Text = datagradeView.CurrentRow.Cells[4].Value.ToString();
+                //cbx01.Text = datagradeView.CurrentRow.Cells[3].Value.ToString();
+                //maskentrada.Text = datagradeView.CurrentRow.Cells[9].Value.ToString();
+                 masksaida.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
+                //txtcnh.Text = datagradeView.CurrentRow.Cells[5].Value.ToString();
+                //txtmotorista.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
+                //txtautorizado.Text = datagradeView.CurrentRow.Cells[7].Value.ToString();
+                Bloquearcampos();
+             
             }
         }
+        private void Bloquearcampos()
+        {
+            masksaida.Enabled = true;
+            txtautorizado.Enabled = false;
+            txtcnh.Enabled = false;
+            txtempresa.Enabled = false;
+            maskentrada.Enabled = false;
+            txtplaca.Enabled = false;
+            txtmotorista.Enabled = false;
+            cbx01.Enabled = false;
+        }
 
+        private  void DesbloquerCampos()
+        {
+            masksaida.Enabled =true;
+            txtautorizado.Enabled = true;
+            masksaida.Clear();
+            txtcnh.Enabled = true;
+            txtempresa.Enabled = true;
+            maskentrada.Enabled = true;
+            txtplaca.Enabled = true;
+            txtmotorista.Enabled = true;
+            cbx01.Enabled = true;
+        }
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Caminhao caminhao = new Caminhao();
+                FluxoDAO fx = new FluxoDAO();
+                caminhao.h_saida = masksaida.Text;
+                string id= Convert.ToString(datagradeView.CurrentRow.Cells[0].Value);
+                caminhao.id = Convert.ToInt32(id);
+                fx.AtualizarCaminhao(caminhao);
+                MessageBox.Show("Dados atualizados");
+                AtualizarDatagrade();
+                DesbloquerCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }     
+        }
     }
 }

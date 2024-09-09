@@ -198,11 +198,7 @@ namespace CT_access.Views
                 string id = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
                 string dataentrada = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 string h_entrada = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                //string totalHoras = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                string kmEntrada = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                //string totalKm = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                
-                
+                string kmEntrada = dataGridView1.CurrentRow.Cells[7].Value.ToString();  
                 updateData upData = new updateData(h_entrada,kmEntrada,id, dataentrada);
                 upData.ShowDialog();
 

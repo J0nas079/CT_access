@@ -151,7 +151,7 @@
   <data name="veiculosDaEmpresaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABPxJREFUaEPtmctTWmcUwJm26URiQEBABMWk+Q86zbSrTFFBBVGMiOL7Mf4LzWTD
+        DAAACwwBP0AiyAAABPxJREFUaEPtmctTWmcUwJm26URiQEBABMWk+Q86zbSrTFFBBVGMiOL7Mf4LzWTD
         +ASfGJ9B87IarYpmJm266TrTTne1ZrptjNNFDVlLNqfn3H55zC0XuA9pO+Nv5gxu5P7Od7/vnOOn6owz
         zlCAbf+H9u2eL+xbXTdLt7p3SzY7n5Vudr2ybXa8tm20v7Y+7HhlXWs7sK217VrXWm9ifK4KhT5gv/3v
         8cmjrhL7dm+kbKfnyL7dDfatbij9pgtQHjAJKNnoANtDjPV2LjAJsH7dCsWrrWB50PKi6EEwbF1utbGv
@@ -406,7 +406,7 @@
     <value>132, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>53</value>
+    <value>56</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

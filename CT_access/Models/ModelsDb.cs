@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SQLite;
-
-namespace CT_access.Models
+﻿namespace CT_access.Models
 {
     //Db de Veiculos externos 
     public class CtVeiculosTercei
@@ -16,7 +9,7 @@ namespace CT_access.Models
         public double horaEntrada { get; set; }
         public double horaSaida { get; set; }
         public double horaFinal { get; set; }
-        public string motoristamotorista { get; set; }
+        public string motorista { get; set; }
         public string veiculo { get; set; }
         public int placa { get; set; }
         public int notaFiscal { get; set; }

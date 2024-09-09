@@ -34,13 +34,11 @@
             maskHREntrada = new MaskedTextBox();
             button1 = new Button();
             label4 = new Label();
-            panel1 = new Panel();
             txtid = new TextBox();
             label3 = new Label();
             maskdata = new MaskedTextBox();
-            lblok = new Label();
             groupBox1 = new GroupBox();
-            panel1.SuspendLayout();
+            lblATT = new Label();
             SuspendLayout();
             // 
             // label1
@@ -96,16 +94,6 @@
             label4.TabIndex = 11;
             label4.Text = "KM/Retorno";
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(lblok);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 291);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(432, 44);
-            panel1.TabIndex = 12;
-            // 
             // txtid
             // 
             txtid.Location = new Point(188, 83);
@@ -131,34 +119,32 @@
             maskdata.TabIndex = 16;
             maskdata.ValidatingType = typeof(DateTime);
             // 
-            // lblok
-            // 
-            lblok.BackColor = Color.White;
-            lblok.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblok.ForeColor = Color.Red;
-            lblok.Location = new Point(119, 14);
-            lblok.Name = "lblok";
-            lblok.Size = new Size(182, 20);
-            lblok.TabIndex = 0;
-            // 
             // groupBox1
             // 
-            groupBox1.Location = new Point(63, 33);
+            groupBox1.Location = new Point(63, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(287, 226);
+            groupBox1.Size = new Size(287, 247);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
+            // 
+            // lblATT
+            // 
+            lblATT.AutoSize = true;
+            lblATT.Location = new Point(168, 277);
+            lblATT.Name = "lblATT";
+            lblATT.Size = new Size(0, 16);
+            lblATT.TabIndex = 18;
             // 
             // updateData
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(128, 255, 128);
-            ClientSize = new Size(432, 335);
+            BackColor = Color.FromArgb(192, 192, 255);
+            ClientSize = new Size(432, 302);
+            Controls.Add(lblATT);
             Controls.Add(maskdata);
             Controls.Add(label3);
             Controls.Add(txtid);
-            Controls.Add(panel1);
             Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(maskHREntrada);
@@ -172,7 +158,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "updateData";
             Load += updateData_Load;
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,11 +169,10 @@
         private MaskedTextBox maskHREntrada;
         private Button button1;
         private Label label4;
-        private Panel panel1;
         private TextBox txtid;
         private Label label3;
         private MaskedTextBox maskdata;
-        private Label lblok;
         private GroupBox groupBox1;
+        private Label lblATT;
     }
 }

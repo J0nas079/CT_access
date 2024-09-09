@@ -19,12 +19,8 @@ namespace CT_access
             textBox1.Focus();
             
         }
-
         private void btm01_Click(object sender, EventArgs e)
-        {
-            //Usuario usuario = new Usuario();
-            // Form1 frm = new Form1();
-            
+        {          
             string txtuser=textBox1.Text;
             string txtpwd=textBox2.Text;
 
@@ -51,7 +47,7 @@ namespace CT_access
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox1.Focus();
-            } // felipe: se tivesse um botão 'cancelar' retornava tipo um 
+            } //se tivesse um botão 'cancelar' retornava tipo um 
             // this.DialogResult = DialogResult.Cancel;
             // e ai fechava pelo main quando fosse = cancel;
           

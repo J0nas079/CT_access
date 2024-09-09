@@ -57,26 +57,26 @@ namespace CT_access.DataAcess
         //Atualizando os dados do Banco
         public void AtualizarCaminhao(Caminhao caminhao)
         {
-            using (var connection = ConectionDb.Dbconection())
+           using SQLiteConnection connection= ConectionDb.Dbconection();
             {
                 try
                 {
-                    //using SQLiteConnection con = ConectionDb.Dbconection();
+                   string sql = "UPDATE T_caminhoes SET h_saida=@h_saida WHERE id=@id";
 
-                    string sql = @"UPDATE T_caminhoes SET data=@data,empresa=@empresa,placa=@placa,
-                        setor=@setor,h_entrada=@h_entrada,h_saida=@h_saida,cnh=@cnh,motorista=@motorista,autorizado=@autorizado WHERE id=@id";
                     using (var cmd = new SQLiteCommand(sql, connection))
                     {
-                        cmd.Parameters.AddWithValue("@data", caminhao.data);
-                        cmd.Parameters.AddWithValue("@empresa", caminhao.empresa);
-                        cmd.Parameters.AddWithValue("@placa", caminhao.placa);
-                        cmd.Parameters.AddWithValue("@setor", caminhao.setor);
-                        cmd.Parameters.AddWithValue("@h_entrada", caminhao.h_entrada);
+                        //cmd.Parameters.AddWithValue("@data", caminhao.data);
+                        //cmd.Parameters.AddWithValue("@empresa", caminhao.empresa);
+                        //cmd.Parameters.AddWithValue("@placa", caminhao.placa);
+                        //cmd.Parameters.AddWithValue("@setor", caminhao.setor);
+                        //cmd.Parameters.AddWithValue("@h_entrada", caminhao.h_entrada);
                         cmd.Parameters.AddWithValue("@h_saida", caminhao.h_saida);
-                        cmd.Parameters.AddWithValue("@cnh", caminhao.cnh);
-                        cmd.Parameters.AddWithValue("@motorista", caminhao.motorista);
-                        cmd.Parameters.AddWithValue("@autorizado", caminhao.autorizado);
+                        cmd.Parameters.AddWithValue("@id", caminhao.id);
+                        //cmd.Parameters.AddWithValue("@cnh", caminhao.cnh);
+                        //cmd.Parameters.AddWithValue("@motorista", caminhao.motorista);
+                        //cmd.Parameters.AddWithValue("@autorizado", caminhao.autorizado);
                         cmd.ExecuteNonQuery();
+
                     }
                 }
                 catch (Exception ex)
