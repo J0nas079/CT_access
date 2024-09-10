@@ -106,27 +106,28 @@
             // 
             entradaCaminhõesToolStripMenuItem.Image = (Image)resources.GetObject("entradaCaminhõesToolStripMenuItem.Image");
             entradaCaminhõesToolStripMenuItem.Name = "entradaCaminhõesToolStripMenuItem";
-            entradaCaminhõesToolStripMenuItem.Size = new Size(269, 22);
+            entradaCaminhõesToolStripMenuItem.Size = new Size(249, 22);
             entradaCaminhõesToolStripMenuItem.Text = "Entrada Caminhões";
             // 
             // veiculosDaEmpresaToolStripMenuItem
             // 
             veiculosDaEmpresaToolStripMenuItem.Image = (Image)resources.GetObject("veiculosDaEmpresaToolStripMenuItem.Image");
             veiculosDaEmpresaToolStripMenuItem.Name = "veiculosDaEmpresaToolStripMenuItem";
-            veiculosDaEmpresaToolStripMenuItem.Size = new Size(269, 22);
+            veiculosDaEmpresaToolStripMenuItem.Size = new Size(249, 22);
             veiculosDaEmpresaToolStripMenuItem.Text = "Veiculos da Empresa";
             veiculosDaEmpresaToolStripMenuItem.Click += veiculosDaEmpresaToolStripMenuItem_Click;
             // 
             // enrraSaidaDeFuncionaroToolStripMenuItem
             // 
             enrraSaidaDeFuncionaroToolStripMenuItem.Name = "enrraSaidaDeFuncionaroToolStripMenuItem";
-            enrraSaidaDeFuncionaroToolStripMenuItem.Size = new Size(269, 22);
-            enrraSaidaDeFuncionaroToolStripMenuItem.Text = "Entrada/Saida de Funcionario";
+            enrraSaidaDeFuncionaroToolStripMenuItem.Size = new Size(249, 22);
+            enrraSaidaDeFuncionaroToolStripMenuItem.Text = "Entrada Veiculos terceiros";
+            enrraSaidaDeFuncionaroToolStripMenuItem.Click += enrraSaidaDeFuncionaroToolStripMenuItem_Click;
             // 
             // entregaDeChavesToolStripMenuItem
             // 
             entregaDeChavesToolStripMenuItem.Name = "entregaDeChavesToolStripMenuItem";
-            entregaDeChavesToolStripMenuItem.Size = new Size(269, 22);
+            entregaDeChavesToolStripMenuItem.Size = new Size(249, 22);
             entregaDeChavesToolStripMenuItem.Text = "Entrega de Chaves";
             // 
             // visualizarDadosCadastradosToolStripMenuItem

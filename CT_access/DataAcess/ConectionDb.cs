@@ -47,11 +47,11 @@ namespace CT_access.DataAcess
                         "data DATETIME," +
                         "horaEntrada VARCHAR(10)," +
                         "horaSaida VARCHAR(10)," +
-                        "nome VARCHAR(10)," +
+                        "nome VARCHAR(40)," +
                         "placa TEXT," +
-                        "fabrica VARCHAR(8)," +
-                        "autorizado VARCHAR(20))," +
-                        "cnh VARCHAR(20)";
+                        "fabrica VARCHAR(30)," +
+                        "autorizado VARCHAR(20)," +
+                        "cnh VARCHAR(20))";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -85,7 +85,7 @@ namespace CT_access.DataAcess
                         "kmrodados VARCHAR(10)," +
                         "motorista TEXT NOT NULL," +
                         "Observacoes VARCHAR(100)," +
-                        "Vigilante VACHAR(15))";
+                        "Vigilante VARCHAR(15))";
                     cmd.ExecuteNonQuery();
                 }
             }

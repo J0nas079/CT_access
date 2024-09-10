@@ -17,7 +17,7 @@ namespace CT_access
         {
             txtempresa.Focus();
             cbx01.DropDownStyle = ComboBoxStyle.DropDownList;
-     
+
             Form1 form1 = new Form1(); // se quiser uma form de login ou uma que seja antes, cria ela no load
             form1.ShowDialog(); // depois abre como dialog
             if (form1.DialogResult == DialogResult.OK) // se o result dessa form for OK, continua pra main
@@ -55,7 +55,6 @@ namespace CT_access
             List<Caminhao> caminhaos = fx.ObterCaminhao();
             datagradeView.DataSource = caminhaos;
         }
-
         private void btnenviar_Click(object sender, EventArgs e)
         {
             Caminhao caminhao = new Caminhao();
@@ -186,12 +185,12 @@ namespace CT_access
                 //txtplaca.Text = datagradeView.CurrentRow.Cells[4].Value.ToString();
                 //cbx01.Text = datagradeView.CurrentRow.Cells[3].Value.ToString();
                 //maskentrada.Text = datagradeView.CurrentRow.Cells[9].Value.ToString();
-                 masksaida.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
+                masksaida.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
                 //txtcnh.Text = datagradeView.CurrentRow.Cells[5].Value.ToString();
                 //txtmotorista.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
                 //txtautorizado.Text = datagradeView.CurrentRow.Cells[7].Value.ToString();
                 Bloquearcampos();
-             
+
             }
         }
         private void Bloquearcampos()
@@ -206,9 +205,9 @@ namespace CT_access
             cbx01.Enabled = false;
         }
 
-        private  void DesbloquerCampos()
+        private void DesbloquerCampos()
         {
-            masksaida.Enabled =true;
+            masksaida.Enabled = true;
             txtautorizado.Enabled = true;
             masksaida.Clear();
             txtcnh.Enabled = true;
@@ -225,7 +224,7 @@ namespace CT_access
                 Caminhao caminhao = new Caminhao();
                 FluxoDAO fx = new FluxoDAO();
                 caminhao.h_saida = masksaida.Text;
-                string id= Convert.ToString(datagradeView.CurrentRow.Cells[0].Value);
+                string id = Convert.ToString(datagradeView.CurrentRow.Cells[0].Value);
                 caminhao.id = Convert.ToInt32(id);
                 fx.AtualizarCaminhao(caminhao);
                 MessageBox.Show("Dados atualizados");
@@ -235,7 +234,13 @@ namespace CT_access
             catch (Exception ex)
             {
                 MessageBox.Show("Erro" + ex.Message);
-            }     
+            }
+        }
+
+        private void enrraSaidaDeFuncionaroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CtVeiculosTerceiro ctVeiculosTerceiro=new CtVeiculosTerceiro();
+            ctVeiculosTerceiro.ShowDialog();
         }
     }
 }

@@ -58,6 +58,7 @@
             label13 = new Label();
             txtObs = new TextBox();
             dataGridView1 = new DataGridView();
+            ctVeiuloEmpBindingSource = new BindingSource(components);
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -72,7 +73,6 @@
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dateentradaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ctVeiuloEmpBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiuloEmpBindingSource).BeginInit();
             SuspendLayout();
@@ -361,8 +361,13 @@
             dataGridView1.TabIndex = 15;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
+            // ctVeiuloEmpBindingSource
+            // 
+            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
+            // 
             // dataGridViewTextBoxColumn2
             // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewTextBoxColumn2.DataPropertyName = "idVeiulo";
             dataGridViewTextBoxColumn2.HeaderText = "idVeiulo";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -445,10 +450,6 @@
             dateentradaDataGridViewTextBoxColumn.HeaderText = "Date_entrada";
             dateentradaDataGridViewTextBoxColumn.Name = "dateentradaDataGridViewTextBoxColumn";
             dateentradaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ctVeiuloEmpBindingSource
-            // 
-            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
             // 
             // V_empresa
             // 

@@ -1,13 +1,8 @@
 ﻿using CT_access.Interface;
 using CT_access.Models;
-using System;
-using System.Collections.Generic;
+using CT_access.Views;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CT_access.DataAcess
 {
@@ -23,9 +18,10 @@ namespace CT_access.DataAcess
             var VeiculosTer=new List<Ct_VeiculosTer>();
             try
             {
-                using (var con = ConectionDb.Dbconection())
+                using SQLiteConnection con = ConectionDb.Dbconection();
                 {
-                    DataTable dataTable = new DataTable();
+                    CtVeiculosTercei ctVeiculosTercei=new CtVeiculosTercei();
+                    DataTable dt = new DataTable();
                     SQLiteDataAdapter da = null;
                     string sql = @"SELECT * FROM T_CtVeiculosTercei";
                     using(var cmd=new SQLiteCommand(sql, con))
@@ -34,33 +30,31 @@ namespace CT_access.DataAcess
                         while (reader.Read())
                         {
                             var Veicutorer = new Ct_VeiculosTer()
-                            {
-                                id = reader.GetInt32(0),
+                            {      
+                                id = Convert.ToInt32(reader["id_veiculosTer"]),
                                 empresa = reader["empresa"].ToString(),
-                                data = Convert.ToDateTime(reader["data"]).ToLocalTime(),
+                                data = Convert.ToDateTime(reader["data"]),
                                 h_entrada = reader["horaEntrada"].ToString(),
                                 h_saida = reader["horaSaida"].ToString(),
                                 nome = reader["nome"].ToString(),
                                 placa = reader["placa"].ToString(),
-                                fabrica = reader["fabricante"].ToString(),
+                                fabrica = reader["fabrica"].ToString(),
                                 autorizado = reader["autorizado"].ToString(),
                                 cnh = reader["cnh"].ToString()
                             };
                             VeiculosTer.Add(Veicutorer);
                         }
                     }
-                    return VeiculosTer;
-                
+                    return VeiculosTer;               
                 }
-
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return VeiculosTer;
             }
+            
         }
-
         public List<Ct_VeiculosTer> PesquisaId(int id)
         {
             throw new NotImplementedException();
@@ -68,9 +62,26 @@ namespace CT_access.DataAcess
 
         public void SetvTerceiro(Ct_VeiculosTer ctVeiculosTercei)
         {
-            throw new NotImplementedException();
-        }
+            //string FormateDate = ctVeiculosTercei.data.ToString("dd-MM-yyyy");
+            using SQLiteConnection connection = ConectionDb.Dbconection();
+            string sql = "INSERT INTO T_CtVeiculosTercei (empresa,data,horaEntrada,horaSaida,nome,placa,fabrica," +
+                "autorizado,cnh)VALUES(@empresa,@data,@horaEntrada,@horaSaida,@nome,@placa,@fabrica,@autorizado," +
+                "@cnh)";
+            using (var cmd = new SQLiteCommand(sql, connection))
+            {
+                cmd.Parameters.AddWithValue("@empresa", ctVeiculosTercei.empresa);
+                cmd.Parameters.AddWithValue("@data", ctVeiculosTercei.data.ToString("dd-MM-yyyy"));
+                cmd.Parameters.AddWithValue("@horaEntrada", ctVeiculosTercei.h_entrada);
+                cmd.Parameters.AddWithValue("@horaSaida", ctVeiculosTercei.h_saida);
+                cmd.Parameters.AddWithValue("@nome", ctVeiculosTercei.nome);
+                cmd.Parameters.AddWithValue("@placa", ctVeiculosTercei.placa);
+                cmd.Parameters.AddWithValue("@fabrica", ctVeiculosTercei.fabrica);
+                cmd.Parameters.AddWithValue("@autorizado", ctVeiculosTercei.autorizado);
+                cmd.Parameters.AddWithValue("@cnh", ctVeiculosTercei.cnh);
+                cmd.ExecuteNonQuery();
+            }
 
+        }
         public void UpdateDados(Ct_VeiculosTer ctVeiculosTercei)
         {
             throw new NotImplementedException();
