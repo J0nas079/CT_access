@@ -12,6 +12,6 @@
         public string fabrica {get; set; }
         public string autorizado { get; set; }
         public string  cnh { get; set; }
-        public string DataFormatada => data.ToString("dd-MM-yyyy");
+        //public string DataFormatada => data.ToString("dd-MM-yyyy");
     }
 }

@@ -108,13 +108,90 @@ namespace CT_access.Views
             maskh_entrada.Clear();
 
         }
+        //private void ListarTabela()
+        //{
+        //    // Obtém a lista de veículos
+        //    List<Ct_VeiculosTer> ctVeiculos = veiculosdao.GetCtVeiculosTerceis();
+
+        //    dataGridView1.AutoGenerateColumns = true;
+        //    dataGridView1.DataSource = ctVeiculos;
+        //}
         private void ListarTabela()
         {
             // Obtém a lista de veículos
             List<Ct_VeiculosTer> ctVeiculos = veiculosdao.GetCtVeiculosTerceis();
-            dataGridView1.AutoGenerateColumns = false;
+
+            // Desativando a geração automática de colunas
+            dataGridView1.AutoGenerateColumns = true;
+
+            // Limpar as colunas atuais para evitar duplicação
+            dataGridView1.Columns.Clear();
+
+            // Definir manualmente as colunas
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "id", // Nome da propriedade no objeto
+                HeaderText = "ID"        // Texto do cabeçalho da coluna
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "empresa",
+                HeaderText = "Empresa"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "data",
+                HeaderText = "Data"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "h_entrada",
+                HeaderText = "Hora Entrada"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "h_saida",
+                HeaderText = "Hora Saída"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "nome",
+                HeaderText = "Nome"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "placa",
+                HeaderText = "Placa"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "fabrica",
+                HeaderText = "Fábrica"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "autorizado",
+                HeaderText = "Autorizado"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "cnh",
+                HeaderText = "CNH"
+            });
+
+            // Definir a fonte de dados
             dataGridView1.DataSource = ctVeiculos;
         }
+
         private void CtVeiculosTerceiro_Load(object sender, EventArgs e)
         {
             ListarTabela();

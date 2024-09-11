@@ -12,49 +12,49 @@ namespace CT_access.DataAcess
         {
             throw new NotImplementedException();
         }
-
         public List<Ct_VeiculosTer> GetCtVeiculosTerceis()
         {
-            var VeiculosTer=new List<Ct_VeiculosTer>();
+            var VeiculosTer = new List<Ct_VeiculosTer>();
             try
             {
-                using SQLiteConnection con = ConectionDb.Dbconection();
+                using (var con = ConectionDb.Dbconection())
                 {
-                    CtVeiculosTercei ctVeiculosTercei=new CtVeiculosTercei();
-                    DataTable dt = new DataTable();
-                    SQLiteDataAdapter da = null;
-                    string sql = @"SELECT * FROM T_CtVeiculosTercei";
-                    using(var cmd=new SQLiteCommand(sql, con))
-                    using (var reader = cmd.ExecuteReader())
-                    { 
-                        while (reader.Read())
+                    //con.Open();
+                    string sql = "SELECT * FROM T_CtVeiculosTercei";
+                    using (var cmd = new SQLiteCommand(sql, con))
+                    {
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            var Veicutorer = new Ct_VeiculosTer()
-                            {      
-                                id = Convert.ToInt32(reader["id_veiculosTer"]),
-                                empresa = reader["empresa"].ToString(),
-                                data = Convert.ToDateTime(reader["data"]),
-                                h_entrada = reader["horaEntrada"].ToString(),
-                                h_saida = reader["horaSaida"].ToString(),
-                                nome = reader["nome"].ToString(),
-                                placa = reader["placa"].ToString(),
-                                fabrica = reader["fabrica"].ToString(),
-                                autorizado = reader["autorizado"].ToString(),
-                                cnh = reader["cnh"].ToString()
-                            };
-                            VeiculosTer.Add(Veicutorer);
+                            while (reader.Read())
+                            {
+                                var Veicutorer = new Ct_VeiculosTer()
+                                {
+                                    id = Convert.ToInt32(reader["id_veiculosTer"]),
+                                    empresa = reader["empresa"].ToString(),
+                                    data = Convert.ToDateTime(reader["data"]),
+                                    h_entrada = reader["horaEntrada"].ToString(),
+                                    h_saida = reader["horaSaida"].ToString(),
+                                    nome = reader["nome"].ToString(),
+                                    placa = reader["placa"].ToString(),
+                                    fabrica = reader["fabrica"].ToString(),
+                                    autorizado = reader["autorizado"].ToString(),
+                                    cnh = reader["cnh"].ToString()
+                                };
+                                VeiculosTer.Add(Veicutorer);
+                            }
                         }
                     }
-                    return VeiculosTer;               
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return VeiculosTer;
             }
-            
+
+            return VeiculosTer;
         }
+
+
         public List<Ct_VeiculosTer> PesquisaId(int id)
         {
             throw new NotImplementedException();
