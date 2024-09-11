@@ -53,7 +53,7 @@ namespace CT_access.DataAcess
                             var car = new CtVeiuloEmp()
                             {
                                 idVeiulo = reader.GetInt32(reader.GetOrdinal("id")),
-                                data = Convert.ToDateTime(reader["data"]).ToLocalTime(),
+                                data = Convert.ToDateTime(reader["data"]).ToLocalTime().Date,
                                 itinerario = reader["itinerario"].ToString(),
                                 horasaida = reader["h_saida"].ToString(),
                                 horaentrada = reader["h_entrada"].ToString(),
@@ -176,7 +176,7 @@ namespace CT_access.DataAcess
                                 var car = new CtVeiuloEmp
                                 {
                                     idVeiulo = reader.GetInt32(reader.GetOrdinal("id")),
-                                    data = Convert.ToDateTime(reader["data"]).ToLocalTime(),
+                                    data = Convert.ToDateTime(reader["data"]).ToLocalTime().Date,
                                     itinerario = reader["itinerario"].ToString(),
                                     horasaida = reader["h_saida"].ToString(),
                                     horaentrada = reader["h_entrada"].ToString(),

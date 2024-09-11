@@ -26,6 +26,7 @@ namespace CT_access.Views
                 {
                     ct_veiculos.empresa = txtempresa.Text;
                     ct_veiculos.data = Convert.ToDateTime(maskdata.Text).Date;
+                    MessageBox.Show(ct_veiculos.data.ToString());
                 }
                 else
                 {
@@ -112,7 +113,7 @@ namespace CT_access.Views
         {
             // Obtém a lista de veículos
             List<Ct_VeiculosTer> ctVeiculos = veiculosdao.GetCtVeiculosTerceis();
-            dataGridView1.AutoGenerateColumns = false;
+            //dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ctVeiculos;
         }
         private void CtVeiculosTerceiro_Load(object sender, EventArgs e)
@@ -120,12 +121,7 @@ namespace CT_access.Views
             ListarTabela();
             txtempresa.Focus();
             maskdata.Enabled = false;
-            maskdata.Text = DateTime.Now.Date.ToString();
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            maskdata.Text = DateTime.Today.ToString("dd-MM-yyyy");
         }
     }
 }

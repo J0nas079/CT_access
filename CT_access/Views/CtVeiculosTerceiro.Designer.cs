@@ -254,7 +254,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(876, 231);
             dataGridView1.TabIndex = 19;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -274,6 +273,7 @@
             dataDataGridViewTextBoxColumn.DataPropertyName = "data";
             dataDataGridViewTextBoxColumn.HeaderText = "Data";
             dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            dataDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // hentradaDataGridViewTextBoxColumn
             // 
@@ -349,6 +349,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(915, 534);
             Controls.Add(btnEditar);
             Controls.Add(btnEnviar);

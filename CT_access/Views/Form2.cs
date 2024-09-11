@@ -17,6 +17,7 @@ namespace CT_access
         {
             txtempresa.Focus();
             cbx01.DropDownStyle = ComboBoxStyle.DropDownList;
+            lblData.Text = DateTime.Today.ToString("dd-MM-yyyy");
 
             Form1 form1 = new Form1(); // se quiser uma form de login ou uma que seja antes, cria ela no load
             form1.ShowDialog(); // depois abre como dialog
@@ -36,8 +37,6 @@ namespace CT_access
         }
         private void LimparCampos()
         {
-            maskData.Enabled = false;
-            maskData.Text = DateTime.Now.ToString();
             maskentrada.Clear();
             masksaida.Clear();
             cbx01.SelectedIndex = -1;
@@ -124,11 +123,11 @@ namespace CT_access
                     caminhao.motorista = txtmotorista.Text;
                 }
                 DateTime parsedDate;
-                string format = "dd/MM/yyyy"; // Defina o formato esperado
+                string format = "dd-MM-yyyy"; // Defina o formato esperado
 
-                if (DateTime.TryParseExact(maskData.Text, format, null, System.Globalization.DateTimeStyles.None, out parsedDate))
+                if (DateTime.TryParseExact(lblData.Text, format, null, System.Globalization.DateTimeStyles.None, out parsedDate))
                 {
-                    caminhao.data = parsedDate;
+                    caminhao.data = parsedDate.Date;
                 }
                 else
                 {
@@ -179,18 +178,8 @@ namespace CT_access
             if (e.RowIndex > -1)
             {
                 VeiculosEmpDAO vei = new VeiculosEmpDAO();
-
-
-                //txtempresa.Text = datagradeView.CurrentRow.Cells[2].Value.ToString();
-                //txtplaca.Text = datagradeView.CurrentRow.Cells[4].Value.ToString();
-                //cbx01.Text = datagradeView.CurrentRow.Cells[3].Value.ToString();
-                //maskentrada.Text = datagradeView.CurrentRow.Cells[9].Value.ToString();
                 masksaida.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
-                //txtcnh.Text = datagradeView.CurrentRow.Cells[5].Value.ToString();
-                //txtmotorista.Text = datagradeView.CurrentRow.Cells[6].Value.ToString();
-                //txtautorizado.Text = datagradeView.CurrentRow.Cells[7].Value.ToString();
                 Bloquearcampos();
-
             }
         }
         private void Bloquearcampos()
@@ -239,8 +228,14 @@ namespace CT_access
 
         private void enrraSaidaDeFuncionaroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CtVeiculosTerceiro ctVeiculosTerceiro=new CtVeiculosTerceiro();
+            CtVeiculosTerceiro ctVeiculosTerceiro = new CtVeiculosTerceiro();
             ctVeiculosTerceiro.ShowDialog();
+        }
+
+        private void entradaESaídaDeFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Ct_veiculosTerComp veiculosTercerio=new Ct_veiculosTerComp();
+            veiculosTercerio.Show();
         }
     }
 }

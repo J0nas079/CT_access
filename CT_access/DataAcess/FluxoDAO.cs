@@ -133,7 +133,7 @@ namespace CT_access.DataAcess
                             var truck = new Caminhao()
                             {
                                 id = reader.GetInt32(reader.GetOrdinal("id")),
-                                data = Convert.ToDateTime(reader["data"]).ToLocalTime(),
+                                data = Convert.ToDateTime(reader["data"]).ToLocalTime().Date,
                                 empresa = reader["empresa"].ToString(),
                                 placa = reader["placa"].ToString(),
                                 setor = reader["setor"].ToString(),

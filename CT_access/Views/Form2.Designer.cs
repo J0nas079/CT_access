@@ -61,7 +61,6 @@
             txtcnh = new TextBox();
             label11 = new Label();
             label8 = new Label();
-            maskData = new MaskedTextBox();
             txtautorizado = new TextBox();
             btnenviar = new Button();
             cbx01 = new ComboBox();
@@ -77,6 +76,7 @@
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hentradaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hsaidaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lblData = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)caminhaoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)datagradeView).BeginInit();
@@ -90,7 +90,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(813, 24);
+            menuStrip1.Size = new Size(867, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -119,6 +119,7 @@
             // 
             // enrraSaidaDeFuncionaroToolStripMenuItem
             // 
+            enrraSaidaDeFuncionaroToolStripMenuItem.Image = (Image)resources.GetObject("enrraSaidaDeFuncionaroToolStripMenuItem.Image");
             enrraSaidaDeFuncionaroToolStripMenuItem.Name = "enrraSaidaDeFuncionaroToolStripMenuItem";
             enrraSaidaDeFuncionaroToolStripMenuItem.Size = new Size(249, 22);
             enrraSaidaDeFuncionaroToolStripMenuItem.Text = "Entrada Veiculos terceiros";
@@ -142,7 +143,7 @@
             // 
             entradaDeCaminhoesToolStripMenuItem.Image = (Image)resources.GetObject("entradaDeCaminhoesToolStripMenuItem.Image");
             entradaDeCaminhoesToolStripMenuItem.Name = "entradaDeCaminhoesToolStripMenuItem";
-            entradaDeCaminhoesToolStripMenuItem.Size = new Size(274, 22);
+            entradaDeCaminhoesToolStripMenuItem.Size = new Size(224, 22);
             entradaDeCaminhoesToolStripMenuItem.Text = "Entrada de Caminhoes";
             entradaDeCaminhoesToolStripMenuItem.Click += entradaDeCaminhoesToolStripMenuItem_Click;
             // 
@@ -150,7 +151,7 @@
             // 
             veiculosEmpresaToolStripMenuItem.Image = (Image)resources.GetObject("veiculosEmpresaToolStripMenuItem.Image");
             veiculosEmpresaToolStripMenuItem.Name = "veiculosEmpresaToolStripMenuItem";
-            veiculosEmpresaToolStripMenuItem.Size = new Size(274, 22);
+            veiculosEmpresaToolStripMenuItem.Size = new Size(224, 22);
             veiculosEmpresaToolStripMenuItem.Text = "Veiculos Empresa";
             veiculosEmpresaToolStripMenuItem.Click += veiculosEmpresaToolStripMenuItem_Click;
             // 
@@ -158,13 +159,14 @@
             // 
             entradaESaídaDeFuncionariosToolStripMenuItem.Image = (Image)resources.GetObject("entradaESaídaDeFuncionariosToolStripMenuItem.Image");
             entradaESaídaDeFuncionariosToolStripMenuItem.Name = "entradaESaídaDeFuncionariosToolStripMenuItem";
-            entradaESaídaDeFuncionariosToolStripMenuItem.Size = new Size(274, 22);
-            entradaESaídaDeFuncionariosToolStripMenuItem.Text = "Entrada/Saída de funcionarios";
+            entradaESaídaDeFuncionariosToolStripMenuItem.Size = new Size(224, 22);
+            entradaESaídaDeFuncionariosToolStripMenuItem.Text = "Veiculos de Terceiros";
+            entradaESaídaDeFuncionariosToolStripMenuItem.Click += entradaESaídaDeFuncionariosToolStripMenuItem_Click;
             // 
             // eToolStripMenuItem
             // 
             eToolStripMenuItem.Name = "eToolStripMenuItem";
-            eToolStripMenuItem.Size = new Size(274, 22);
+            eToolStripMenuItem.Size = new Size(224, 22);
             eToolStripMenuItem.Text = "Entrega de Chaves";
             // 
             // label9
@@ -182,7 +184,7 @@
             // btneditar
             // 
             btneditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btneditar.Location = new Point(570, 417);
+            btneditar.Location = new Point(624, 444);
             btneditar.Name = "btneditar";
             btneditar.Size = new Size(91, 42);
             btneditar.TabIndex = 12;
@@ -193,7 +195,7 @@
             // btndeletar
             // 
             btndeletar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btndeletar.Location = new Point(711, 417);
+            btndeletar.Location = new Point(765, 444);
             btndeletar.Name = "btndeletar";
             btndeletar.Size = new Size(90, 42);
             btndeletar.TabIndex = 13;
@@ -242,7 +244,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Antique Olive", 9.75F);
-            label5.Location = new Point(409, 134);
+            label5.Location = new Point(463, 134);
             label5.Name = "label5";
             label5.Size = new Size(43, 16);
             label5.TabIndex = 4;
@@ -270,7 +272,7 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Antique Olive", 9.75F);
-            label7.Location = new Point(639, 134);
+            label7.Location = new Point(693, 134);
             label7.Name = "label7";
             label7.Size = new Size(41, 16);
             label7.TabIndex = 8;
@@ -281,7 +283,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Antique Olive", 9.75F);
-            label6.Location = new Point(459, 134);
+            label6.Location = new Point(513, 134);
             label6.Name = "label6";
             label6.Size = new Size(59, 16);
             label6.TabIndex = 5;
@@ -292,7 +294,7 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Antique Olive", 9.75F);
-            label10.Location = new Point(446, 51);
+            label10.Location = new Point(500, 51);
             label10.Name = "label10";
             label10.Size = new Size(72, 16);
             label10.TabIndex = 18;
@@ -301,7 +303,7 @@
             // maskentrada
             // 
             maskentrada.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            maskentrada.Location = new Point(538, 131);
+            maskentrada.Location = new Point(592, 131);
             maskentrada.Mask = "90:00";
             maskentrada.Name = "maskentrada";
             maskentrada.Size = new Size(82, 24);
@@ -311,7 +313,7 @@
             // txtmotorista
             // 
             txtmotorista.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtmotorista.Location = new Point(538, 42);
+            txtmotorista.Location = new Point(592, 42);
             txtmotorista.Name = "txtmotorista";
             txtmotorista.Size = new Size(174, 24);
             txtmotorista.TabIndex = 5;
@@ -319,7 +321,7 @@
             // masksaida
             // 
             masksaida.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            masksaida.Location = new Point(685, 131);
+            masksaida.Location = new Point(739, 131);
             masksaida.Mask = "90:00";
             masksaida.Name = "masksaida";
             masksaida.Size = new Size(82, 24);
@@ -329,7 +331,7 @@
             // txtcnh
             // 
             txtcnh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtcnh.Location = new Point(538, 179);
+            txtcnh.Location = new Point(592, 179);
             txtcnh.Name = "txtcnh";
             txtcnh.Size = new Size(148, 24);
             txtcnh.TabIndex = 10;
@@ -339,7 +341,7 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Font = new Font("Antique Olive", 9.75F);
-            label11.Location = new Point(438, 94);
+            label11.Location = new Point(492, 94);
             label11.Name = "label11";
             label11.Size = new Size(82, 16);
             label11.TabIndex = 20;
@@ -350,25 +352,16 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Antique Olive", 9.75F);
-            label8.Location = new Point(483, 187);
+            label8.Location = new Point(537, 187);
             label8.Name = "label8";
             label8.Size = new Size(35, 16);
             label8.TabIndex = 5;
             label8.Text = "CNH";
             // 
-            // maskData
-            // 
-            maskData.Location = new Point(107, 39);
-            maskData.Mask = "00/00/0000";
-            maskData.Name = "maskData";
-            maskData.Size = new Size(114, 24);
-            maskData.TabIndex = 1;
-            maskData.ValidatingType = typeof(DateTime);
-            // 
             // txtautorizado
             // 
             txtautorizado.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtautorizado.Location = new Point(538, 91);
+            txtautorizado.Location = new Point(592, 91);
             txtautorizado.Name = "txtautorizado";
             txtautorizado.Size = new Size(174, 24);
             txtautorizado.TabIndex = 6;
@@ -376,7 +369,7 @@
             // btnenviar
             // 
             btnenviar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnenviar.Location = new Point(438, 417);
+            btnenviar.Location = new Point(492, 444);
             btnenviar.Name = "btnenviar";
             btnenviar.Size = new Size(113, 42);
             btnenviar.TabIndex = 11;
@@ -395,7 +388,7 @@
             // 
             // datagradeView
             // 
-            datagradeView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            datagradeView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             datagradeView.AutoGenerateColumns = false;
             datagradeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             datagradeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -405,12 +398,13 @@
             datagradeView.DataSource = caminhaoBindingSource;
             datagradeView.Location = new Point(20, 255);
             datagradeView.Name = "datagradeView";
-            datagradeView.Size = new Size(776, 145);
+            datagradeView.Size = new Size(830, 156);
             datagradeView.TabIndex = 14;
             datagradeView.CellContentDoubleClick += datagradeView_CellContentDoubleClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
+            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
@@ -455,6 +449,7 @@
             // 
             // autorizadoDataGridViewTextBoxColumn
             // 
+            autorizadoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             autorizadoDataGridViewTextBoxColumn.DataPropertyName = "autorizado";
             autorizadoDataGridViewTextBoxColumn.HeaderText = "Autorizado";
             autorizadoDataGridViewTextBoxColumn.Name = "autorizadoDataGridViewTextBoxColumn";
@@ -467,6 +462,7 @@
             // 
             // hentradaDataGridViewTextBoxColumn
             // 
+            hentradaDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             hentradaDataGridViewTextBoxColumn.DataPropertyName = "h_entrada";
             hentradaDataGridViewTextBoxColumn.HeaderText = "H_entrada";
             hentradaDataGridViewTextBoxColumn.Name = "hentradaDataGridViewTextBoxColumn";
@@ -477,12 +473,21 @@
             hsaidaDataGridViewTextBoxColumn.HeaderText = "H_saida";
             hsaidaDataGridViewTextBoxColumn.Name = "hsaidaDataGridViewTextBoxColumn";
             // 
+            // lblData
+            // 
+            lblData.AutoSize = true;
+            lblData.Location = new Point(114, 39);
+            lblData.Name = "lblData";
+            lblData.Size = new Size(0, 16);
+            lblData.TabIndex = 21;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(813, 471);
+            ClientSize = new Size(867, 498);
+            Controls.Add(lblData);
             Controls.Add(datagradeView);
             Controls.Add(cbx01);
             Controls.Add(btnenviar);
@@ -490,7 +495,6 @@
             Controls.Add(txtautorizado);
             Controls.Add(btneditar);
             Controls.Add(label9);
-            Controls.Add(maskData);
             Controls.Add(menuStrip1);
             Controls.Add(label8);
             Controls.Add(maskentrada);
@@ -555,11 +559,11 @@
         private TextBox txtcnh;
         private Label label11;
         private Label label8;
-        private MaskedTextBox maskData;
         private TextBox txtautorizado;
         private Button btnenviar;
         private ComboBox cbx01;
         private DataGridView datagradeView;
+        private Label lblData;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;

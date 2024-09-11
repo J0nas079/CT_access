@@ -18,22 +18,21 @@ namespace CT_access.DataAcess
             var VeiculosTer=new List<Ct_VeiculosTer>();
             try
             {
-                using SQLiteConnection con = ConectionDb.Dbconection();
+                using(var connenction = ConectionDb.Dbconection())
                 {
-                    CtVeiculosTercei ctVeiculosTercei=new CtVeiculosTercei();
-                    DataTable dt = new DataTable();
-                    SQLiteDataAdapter da = null;
-                    string sql = @"SELECT * FROM T_CtVeiculosTercei";
-                    using(var cmd=new SQLiteCommand(sql, con))
-                    using (var reader = cmd.ExecuteReader())
-                    { 
+                    //using SQLiteConnection con = ConectionDb.Dbconection();
+                    string sql = @"SELECT * FROM T_CtVeiculosTercei;
+";
+                    using (var cmd = new SQLiteCommand(sql, connenction))
+                    using(var reader = cmd.ExecuteReader())
+                    {
                         while (reader.Read())
                         {
-                            var Veicutorer = new Ct_VeiculosTer()
-                            {      
-                                id = Convert.ToInt32(reader["id_veiculosTer"]),
+                            var veiculo = new Ct_VeiculosTer()
+                            {
+                                id = reader.GetInt32(reader.GetOrdinal("id_veiculosTer")),
                                 empresa = reader["empresa"].ToString(),
-                                data = Convert.ToDateTime(reader["data"]),
+                                data = Convert.ToDateTime(reader["data"]).ToLocalTime().Date,
                                 h_entrada = reader["horaEntrada"].ToString(),
                                 h_saida = reader["horaSaida"].ToString(),
                                 nome = reader["nome"].ToString(),
@@ -42,18 +41,17 @@ namespace CT_access.DataAcess
                                 autorizado = reader["autorizado"].ToString(),
                                 cnh = reader["cnh"].ToString()
                             };
-                            VeiculosTer.Add(Veicutorer);
+                            VeiculosTer.Add(veiculo);                            
                         }
+                        return VeiculosTer;
                     }
-                    return VeiculosTer;               
                 }
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return VeiculosTer;
-            }
-            
+            }            
         }
         public List<Ct_VeiculosTer> PesquisaId(int id)
         {
@@ -70,7 +68,7 @@ namespace CT_access.DataAcess
             using (var cmd = new SQLiteCommand(sql, connection))
             {
                 cmd.Parameters.AddWithValue("@empresa", ctVeiculosTercei.empresa);
-                cmd.Parameters.AddWithValue("@data", ctVeiculosTercei.data.ToString("dd-MM-yyyy"));
+                cmd.Parameters.AddWithValue("@data", ctVeiculosTercei.data);
                 cmd.Parameters.AddWithValue("@horaEntrada", ctVeiculosTercei.h_entrada);
                 cmd.Parameters.AddWithValue("@horaSaida", ctVeiculosTercei.h_saida);
                 cmd.Parameters.AddWithValue("@nome", ctVeiculosTercei.nome);
