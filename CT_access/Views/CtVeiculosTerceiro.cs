@@ -113,7 +113,6 @@ namespace CT_access.Views
         {
             // Obtém a lista de veículos
             List<Ct_VeiculosTer> ctVeiculos = veiculosdao.GetCtVeiculosTerceis();
-            //dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ctVeiculos;
         }
         private void CtVeiculosTerceiro_Load(object sender, EventArgs e)

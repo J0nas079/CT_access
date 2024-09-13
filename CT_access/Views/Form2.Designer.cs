@@ -391,7 +391,7 @@
             datagradeView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             datagradeView.AutoGenerateColumns = false;
             datagradeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            datagradeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            datagradeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             datagradeView.BackgroundColor = Color.White;
             datagradeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             datagradeView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, empresaDataGridViewTextBoxColumn, setorDataGridViewTextBoxColumn, placaDataGridViewTextBoxColumn, cnhDataGridViewTextBoxColumn, motoristaDataGridViewTextBoxColumn, autorizadoDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, hentradaDataGridViewTextBoxColumn, hsaidaDataGridViewTextBoxColumn });

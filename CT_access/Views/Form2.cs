@@ -165,7 +165,7 @@ namespace CT_access
         private void veiculosDaEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             V_empresa v_Empresa = new V_empresa();
-            v_Empresa.ShowDialog();
+            v_Empresa.Show();
         }
         private void veiculosEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -192,6 +192,9 @@ namespace CT_access
             txtplaca.Enabled = false;
             txtmotorista.Enabled = false;
             cbx01.Enabled = false;
+            btnenviar.Enabled = false;
+            btndeletar.Enabled = false;
+
         }
 
         private void DesbloquerCampos()
@@ -210,15 +213,24 @@ namespace CT_access
         {
             try
             {
-                Caminhao caminhao = new Caminhao();
-                FluxoDAO fx = new FluxoDAO();
-                caminhao.h_saida = masksaida.Text;
-                string id = Convert.ToString(datagradeView.CurrentRow.Cells[0].Value);
-                caminhao.id = Convert.ToInt32(id);
-                fx.AtualizarCaminhao(caminhao);
-                MessageBox.Show("Dados atualizados");
-                AtualizarDatagrade();
-                DesbloquerCampos();
+                if (masksaida.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor infomar a Hora da Saída");
+                    return;
+                }
+                else
+                {
+                    Caminhao caminhao = new Caminhao();
+                    FluxoDAO fx = new FluxoDAO();
+                    caminhao.h_saida = masksaida.Text;
+                    string id = Convert.ToString(datagradeView.CurrentRow.Cells[0].Value);
+                    caminhao.id = Convert.ToInt32(id);
+                    fx.AtualizarCaminhao(caminhao);
+                    MessageBox.Show("Dados atualizados");
+                    AtualizarDatagrade();
+                    DesbloquerCampos();
+                }
+               
             }
             catch (Exception ex)
             {
@@ -229,7 +241,7 @@ namespace CT_access
         private void enrraSaidaDeFuncionaroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CtVeiculosTerceiro ctVeiculosTerceiro = new CtVeiculosTerceiro();
-            ctVeiculosTerceiro.ShowDialog();
+            ctVeiculosTerceiro.Show();
         }
 
         private void entradaESaídaDeFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)

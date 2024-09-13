@@ -31,6 +31,10 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompleto));
             dataGridView1 = new DataGridView();
+            caminhaoBindingSource = new BindingSource(components);
+            label1 = new Label();
+            txtsearch = new TextBox();
+            panel1 = new Panel();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             empresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -42,10 +46,6 @@
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hentradaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hsaidaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            caminhaoBindingSource = new BindingSource(components);
-            label1 = new Label();
-            txtsearch = new TextBox();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)caminhaoBindingSource).BeginInit();
             SuspendLayout();
@@ -60,11 +60,46 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, empresaDataGridViewTextBoxColumn, setorDataGridViewTextBoxColumn, placaDataGridViewTextBoxColumn, cnhDataGridViewTextBoxColumn, motoristaDataGridViewTextBoxColumn, autorizadoDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, hentradaDataGridViewTextBoxColumn, hsaidaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = caminhaoBindingSource;
             dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(3, 85);
+            dataGridView1.Location = new Point(3, 91);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridView1.Size = new Size(796, 344);
+            dataGridView1.Size = new Size(910, 367);
             dataGridView1.TabIndex = 2;
+            // 
+            // caminhaoBindingSource
+            // 
+            caminhaoBindingSource.DataSource = typeof(Models.Caminhao);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(255, 128, 0);
+            label1.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(35, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Pesquisar";
+            // 
+            // txtsearch
+            // 
+            txtsearch.BackColor = Color.FromArgb(224, 224, 224);
+            txtsearch.Location = new Point(136, 28);
+            txtsearch.Name = "txtsearch";
+            txtsearch.PlaceholderText = "Informe o nome da empresa";
+            txtsearch.Size = new Size(239, 24);
+            txtsearch.TabIndex = 1;
+            txtsearch.TextChanged += txtsearch_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.Location = new Point(3, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(910, 70);
+            panel1.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -112,6 +147,7 @@
             // 
             // autorizadoDataGridViewTextBoxColumn
             // 
+            autorizadoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             autorizadoDataGridViewTextBoxColumn.DataPropertyName = "autorizado";
             autorizadoDataGridViewTextBoxColumn.HeaderText = "Autorizado";
             autorizadoDataGridViewTextBoxColumn.Name = "autorizadoDataGridViewTextBoxColumn";
@@ -124,61 +160,29 @@
             // 
             // hentradaDataGridViewTextBoxColumn
             // 
+            hentradaDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             hentradaDataGridViewTextBoxColumn.DataPropertyName = "h_entrada";
-            hentradaDataGridViewTextBoxColumn.HeaderText = "H_entrada";
+            hentradaDataGridViewTextBoxColumn.HeaderText = "Hora Entrada";
             hentradaDataGridViewTextBoxColumn.Name = "hentradaDataGridViewTextBoxColumn";
             // 
             // hsaidaDataGridViewTextBoxColumn
             // 
+            hsaidaDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             hsaidaDataGridViewTextBoxColumn.DataPropertyName = "h_saida";
-            hsaidaDataGridViewTextBoxColumn.HeaderText = "H_saida";
+            hsaidaDataGridViewTextBoxColumn.HeaderText = "Hora Saida";
             hsaidaDataGridViewTextBoxColumn.Name = "hsaidaDataGridViewTextBoxColumn";
-            // 
-            // caminhaoBindingSource
-            // 
-            caminhaoBindingSource.DataSource = typeof(Models.Caminhao);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(255, 128, 0);
-            label1.Font = new Font("Antique Olive", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(31, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Pesquisar";
-            // 
-            // txtsearch
-            // 
-            txtsearch.BackColor = Color.FromArgb(224, 224, 224);
-            txtsearch.Location = new Point(119, 26);
-            txtsearch.Name = "txtsearch";
-            txtsearch.PlaceholderText = "Informe o nome da empresa";
-            txtsearch.Size = new Size(210, 23);
-            txtsearch.TabIndex = 1;
-            txtsearch.TextChanged += txtsearch_TextChanged;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(255, 128, 0);
-            panel1.Location = new Point(3, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(796, 66);
-            panel1.TabIndex = 5;
             // 
             // FormCompleto
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(802, 450);
+            ClientSize = new Size(917, 480);
             Controls.Add(txtsearch);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
+            Font = new Font("Antique Olive", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCompleto";
             StartPosition = FormStartPosition.CenterScreen;
@@ -194,6 +198,9 @@
 
         private DataGridView dataGridView1;
         private BindingSource caminhaoBindingSource;
+        private Label label1;
+        private TextBox txtsearch;
+        private Panel panel1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;
@@ -205,8 +212,5 @@
         private DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn hentradaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn hsaidaDataGridViewTextBoxColumn;
-        private Label label1;
-        private TextBox txtsearch;
-        private Panel panel1;
     }
 }

@@ -48,6 +48,9 @@
             label9 = new Label();
             txtcnh = new TextBox();
             dataGridView1 = new DataGridView();
+            ctVeiculosTerBindingSource = new BindingSource(components);
+            btnEnviar = new Button();
+            btnEditar = new Button();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             empresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -58,9 +61,6 @@
             fabricaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             autorizadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cnhDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ctVeiculosTerBindingSource = new BindingSource(components);
-            btnEnviar = new Button();
-            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiculosTerBindingSource).BeginInit();
             SuspendLayout();
@@ -255,6 +255,33 @@
             dataGridView1.Size = new Size(876, 231);
             dataGridView1.TabIndex = 19;
             // 
+            // ctVeiculosTerBindingSource
+            // 
+            ctVeiculosTerBindingSource.DataSource = typeof(Models.Ct_VeiculosTer);
+            // 
+            // btnEnviar
+            // 
+            btnEnviar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEnviar.Location = new Point(705, 238);
+            btnEnviar.Margin = new Padding(4, 3, 4, 3);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new Size(85, 39);
+            btnEnviar.TabIndex = 9;
+            btnEnviar.Text = "Enviar";
+            btnEnviar.UseVisualStyleBackColor = true;
+            btnEnviar.Click += btnEnviar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.Location = new Point(815, 238);
+            btnEditar.Margin = new Padding(4, 3, 4, 3);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(85, 39);
+            btnEditar.TabIndex = 11;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -265,7 +292,7 @@
             // empresaDataGridViewTextBoxColumn
             // 
             empresaDataGridViewTextBoxColumn.DataPropertyName = "empresa";
-            empresaDataGridViewTextBoxColumn.HeaderText = "empresa";
+            empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
             empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
             // 
             // dataDataGridViewTextBoxColumn
@@ -317,33 +344,6 @@
             cnhDataGridViewTextBoxColumn.DataPropertyName = "cnh";
             cnhDataGridViewTextBoxColumn.HeaderText = "CNH";
             cnhDataGridViewTextBoxColumn.Name = "cnhDataGridViewTextBoxColumn";
-            // 
-            // ctVeiculosTerBindingSource
-            // 
-            ctVeiculosTerBindingSource.DataSource = typeof(Models.Ct_VeiculosTer);
-            // 
-            // btnEnviar
-            // 
-            btnEnviar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEnviar.Location = new Point(705, 238);
-            btnEnviar.Margin = new Padding(4, 3, 4, 3);
-            btnEnviar.Name = "btnEnviar";
-            btnEnviar.Size = new Size(85, 39);
-            btnEnviar.TabIndex = 9;
-            btnEnviar.Text = "Enviar";
-            btnEnviar.UseVisualStyleBackColor = true;
-            btnEnviar.Click += btnEnviar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.Location = new Point(815, 238);
-            btnEditar.Margin = new Padding(4, 3, 4, 3);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(85, 39);
-            btnEditar.TabIndex = 11;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
             // 
             // CtVeiculosTerceiro
             // 
