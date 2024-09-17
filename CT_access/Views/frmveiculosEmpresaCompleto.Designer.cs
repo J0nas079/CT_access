@@ -1,6 +1,6 @@
 ﻿namespace CT_access.Views
 {
-    partial class VeiculosEPM
+    partial class frmveiculosEmpresaCompleto
     {
         /// <summary>
         /// Required designer variable.

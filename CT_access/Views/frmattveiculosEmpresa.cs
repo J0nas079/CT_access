@@ -4,9 +4,9 @@ using CT_access.Models;
 namespace CT_access.Views
 {
     //PASSANDO OS DADOS PARA A TELA DE ATUALIZAÇÃO 
-    public partial class updateData : Form
+    public partial class frmattveiculosEmpresa : Form
     {
-        public updateData(string h_entrada,string kmEntrada,string id,string dataAtual)
+        public frmattveiculosEmpresa(string h_entrada,string kmEntrada,string id,string dataAtual)
         {
             InitializeComponent();
             txtKMentra.Text = kmEntrada;

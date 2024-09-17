@@ -1,6 +1,6 @@
 ﻿namespace CT_access.Views
 {
-    partial class updateData
+    partial class frmattveiculosEmpresa
     {
         /// <summary>
         /// Required designer variable.

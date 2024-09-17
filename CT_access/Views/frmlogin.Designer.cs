@@ -1,6 +1,6 @@
 ﻿namespace CT_access
 {
-    partial class Form1
+    partial class frmlogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();

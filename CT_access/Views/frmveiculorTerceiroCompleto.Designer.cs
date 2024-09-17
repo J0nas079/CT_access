@@ -1,6 +1,6 @@
 ﻿namespace CT_access.Views
 {
-    partial class Ct_veiculosTerComp
+    partial class frmveiculorTerceiroCompleto
     {
         /// <summary>
         /// Required designer variable.

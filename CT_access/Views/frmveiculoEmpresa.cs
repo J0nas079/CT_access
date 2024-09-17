@@ -3,9 +3,9 @@ using CT_access.Models;
 
 namespace CT_access.Views
 {
-    public partial class V_empresa : Form
+    public partial class frmveiculoEmpresa : Form
     {
-        public V_empresa()
+        public frmveiculoEmpresa()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -66,26 +66,26 @@ namespace CT_access.Views
                     MessageBox.Show("Informe a hora da saida");
                     return;
                 }
-                if (!String.IsNullOrEmpty(maskh_entrada.Text))
-                {
-                    ctVeiuloEmp.horaentrada = maskh_entrada.Text;
-                }
-                else
-                {
-                    MessageBox.Show("Informe a hora da entrada");
-                    return;
-                }
+                //if (!String.IsNullOrEmpty(maskh_entrada.Text))
+                //{
+                //    ctVeiuloEmp.horaentrada = maskh_entrada.Text;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Informe a hora da entrada");
+                //    return;
+                //}
 
                 //ESSE PROCESSO PRECISA SER AUTOMATICO
-                if (!String.IsNullOrEmpty(maskTotalhoras.Text))
-                {
-                    ctVeiuloEmp.horfinal = maskTotalhoras.Text;
-                }
-                else
-                {
-                    MessageBox.Show("HORA TOTAL");
-                    return;
-                }
+                //if (!String.IsNullOrEmpty(maskTotalhoras.Text))
+                //{
+                //    ctVeiuloEmp.horfinal = maskTotalhoras.Text;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("HORA TOTAL");
+                //    return;
+                //}
                 if (!String.IsNullOrEmpty(txtkmSaida.Text))
                 {
                     ctVeiuloEmp.kmSaida = txtkmSaida.Text;
@@ -199,7 +199,7 @@ namespace CT_access.Views
                 string dataentrada = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 string h_entrada = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 string kmEntrada = dataGridView1.CurrentRow.Cells[7].Value.ToString();  
-                updateData upData = new updateData(h_entrada,kmEntrada,id, dataentrada);
+                frmattveiculosEmpresa upData = new frmattveiculosEmpresa(h_entrada,kmEntrada,id, dataentrada);
                 upData.ShowDialog();
 
             }

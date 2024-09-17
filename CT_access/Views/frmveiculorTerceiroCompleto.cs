@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CT_access.Views
 {
-    public partial class Ct_veiculosTerComp : Form
+    public partial class frmveiculorTerceiroCompleto : Form
     {
-        public Ct_veiculosTerComp()
+        public frmveiculorTerceiroCompleto()
         {
             InitializeComponent();
         }

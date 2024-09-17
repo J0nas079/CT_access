@@ -1,6 +1,6 @@
 ﻿namespace CT_access
 {
-    partial class FormCompleto
+    partial class frmveiculoCaminhaoCompleto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompleto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmveiculoCaminhaoCompleto));
             dataGridView1 = new DataGridView();
             caminhaoBindingSource = new BindingSource(components);
             label1 = new Label();

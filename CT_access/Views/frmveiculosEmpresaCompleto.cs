@@ -4,9 +4,9 @@ using System.Data;
 
 namespace CT_access.Views
 {
-    public partial class VeiculosEPM : Form
+    public partial class frmveiculosEmpresaCompleto : Form
     {
-        public VeiculosEPM()
+        public frmveiculosEmpresaCompleto()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;

@@ -1,6 +1,6 @@
 ﻿namespace CT_access
 {
-    partial class Form2
+    partial class frmcaminhão
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcaminhão));
             menuStrip1 = new MenuStrip();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             entradaCaminhõesToolStripMenuItem = new ToolStripMenuItem();
@@ -481,7 +481,7 @@
             lblData.Size = new Size(0, 16);
             lblData.TabIndex = 21;
             // 
-            // Form2
+            // frmcaminhão
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -514,7 +514,7 @@
             Controls.Add(label7);
             Font = new Font("Antique Olive", 9.75F);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form2";
+            Name = "frmcaminhão";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Veiculos";
             Load += Form2_Load;

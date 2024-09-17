@@ -1,6 +1,6 @@
 ﻿namespace CT_access.Views
 {
-    partial class V_empresa
+    partial class frmveiculoEmpresa
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +33,16 @@
             label2 = new Label();
             maskDataAtual = new MaskedTextBox();
             label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             txtDestino = new TextBox();
             maskh_saida = new MaskedTextBox();
-            maskh_entrada = new MaskedTextBox();
             maskDataRetorno = new MaskedTextBox();
             txtkmSaida = new TextBox();
             txtkmEntrada = new TextBox();
             txtTotalkm = new TextBox();
-            label9 = new Label();
-            maskTotalhoras = new MaskedTextBox();
             txtCondutor = new TextBox();
             label10 = new Label();
             txtMatricula = new TextBox();
@@ -58,7 +54,6 @@
             label13 = new Label();
             txtObs = new TextBox();
             dataGridView1 = new DataGridView();
-            ctVeiuloEmpBindingSource = new BindingSource(components);
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
@@ -73,6 +68,11 @@
             dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
             dateentradaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ctVeiuloEmpBindingSource = new BindingSource(components);
+            label9 = new Label();
+            maskTotalhoras = new MaskedTextBox();
+            label4 = new Label();
+            maskh_entrada = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ctVeiuloEmpBindingSource).BeginInit();
             SuspendLayout();
@@ -115,16 +115,6 @@
             label3.Size = new Size(73, 15);
             label3.TabIndex = 3;
             label3.Text = "Hora/Saida";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Antique Olive", 9F);
-            label4.Location = new Point(30, 135);
-            label4.Name = "label4";
-            label4.Size = new Size(90, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Hora/Entrada";
             // 
             // label5
             // 
@@ -184,15 +174,6 @@
             maskh_saida.TabIndex = 3;
             maskh_saida.ValidatingType = typeof(DateTime);
             // 
-            // maskh_entrada
-            // 
-            maskh_entrada.Location = new Point(119, 132);
-            maskh_entrada.Mask = "90:00";
-            maskh_entrada.Name = "maskh_entrada";
-            maskh_entrada.Size = new Size(100, 23);
-            maskh_entrada.TabIndex = 4;
-            maskh_entrada.ValidatingType = typeof(DateTime);
-            // 
             // maskDataRetorno
             // 
             maskDataRetorno.Location = new Point(119, 196);
@@ -224,25 +205,6 @@
             txtTotalkm.Name = "txtTotalkm";
             txtTotalkm.Size = new Size(100, 23);
             txtTotalkm.TabIndex = 9;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Antique Olive", 9F);
-            label9.Location = new Point(38, 167);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 15);
-            label9.TabIndex = 16;
-            label9.Text = "Total/Horas";
-            // 
-            // maskTotalhoras
-            // 
-            maskTotalhoras.Location = new Point(119, 164);
-            maskTotalhoras.Mask = "90:00";
-            maskTotalhoras.Name = "maskTotalhoras";
-            maskTotalhoras.Size = new Size(100, 23);
-            maskTotalhoras.TabIndex = 5;
-            maskTotalhoras.ValidatingType = typeof(DateTime);
             // 
             // txtCondutor
             // 
@@ -361,10 +323,6 @@
             dataGridView1.TabIndex = 15;
             dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
             // 
-            // ctVeiuloEmpBindingSource
-            // 
-            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -451,6 +409,48 @@
             dateentradaDataGridViewTextBoxColumn.Name = "dateentradaDataGridViewTextBoxColumn";
             dateentradaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // ctVeiuloEmpBindingSource
+            // 
+            ctVeiuloEmpBindingSource.DataSource = typeof(Models.CtVeiuloEmp);
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Antique Olive", 9F);
+            label9.Location = new Point(38, 167);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 15);
+            label9.TabIndex = 16;
+            label9.Text = "Total/Horas";
+            // 
+            // maskTotalhoras
+            // 
+            maskTotalhoras.Location = new Point(119, 164);
+            maskTotalhoras.Mask = "90:00";
+            maskTotalhoras.Name = "maskTotalhoras";
+            maskTotalhoras.Size = new Size(100, 23);
+            maskTotalhoras.TabIndex = 5;
+            maskTotalhoras.ValidatingType = typeof(DateTime);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Antique Olive", 9F);
+            label4.Location = new Point(30, 135);
+            label4.Name = "label4";
+            label4.Size = new Size(90, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Hora/Entrada";
+            // 
+            // maskh_entrada
+            // 
+            maskh_entrada.Location = new Point(119, 132);
+            maskh_entrada.Mask = "90:00";
+            maskh_entrada.Name = "maskh_entrada";
+            maskh_entrada.Size = new Size(100, 23);
+            maskh_entrada.TabIndex = 4;
+            maskh_entrada.ValidatingType = typeof(DateTime);
+            // 
             // V_empresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -502,20 +502,16 @@
         private Label label2;
         private MaskedTextBox maskDataAtual;
         private Label label3;
-        private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
         private TextBox txtDestino;
         private MaskedTextBox maskh_saida;
-        private MaskedTextBox maskh_entrada;
         private MaskedTextBox maskDataRetorno;
         private TextBox txtkmSaida;
         private TextBox txtkmEntrada;
         private TextBox txtTotalkm;
-        private Label label9;
-        private MaskedTextBox maskTotalhoras;
         private TextBox txtCondutor;
         private Label label10;
         private TextBox txtMatricula;
@@ -559,5 +555,9 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private DataGridViewTextBoxColumn dateentradaDataGridViewTextBoxColumn;
+        private Label label9;
+        private MaskedTextBox maskTotalhoras;
+        private Label label4;
+        private MaskedTextBox maskh_entrada;
     }
 }

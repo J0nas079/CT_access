@@ -6,9 +6,9 @@ using System.Data;
 namespace CT_access
 
 {
-    public partial class Form2 : Form
+    public partial class frmcaminhão : Form
     {
-        public Form2()
+        public frmcaminhão()
         {
             InitializeComponent();
             masksaida.Enabled = false;
@@ -19,7 +19,7 @@ namespace CT_access
             cbx01.DropDownStyle = ComboBoxStyle.DropDownList;
             lblData.Text = DateTime.Today.ToString("dd-MM-yyyy");
 
-            Form1 form1 = new Form1(); // se quiser uma form de login ou uma que seja antes, cria ela no load
+            frmlogin form1 = new frmlogin(); // se quiser uma form de login ou uma que seja antes, cria ela no load
             form1.ShowDialog(); // depois abre como dialog
             if (form1.DialogResult == DialogResult.OK) // se o result dessa form for OK, continua pra main
             {
@@ -61,7 +61,7 @@ namespace CT_access
 
             try
             {
-                // Validação de campos obrigatórios
+                // Validação de campos obrigatórias
                 if (String.IsNullOrWhiteSpace(txtempresa.Text))
                 {
                     MessageBox.Show("Favor preencher o campo Empresa.");
@@ -158,18 +158,18 @@ namespace CT_access
 
         private void entradaDeCaminhoesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCompleto formCompleto = new FormCompleto();
+            frmveiculoCaminhaoCompleto formCompleto = new frmveiculoCaminhaoCompleto();
 
             formCompleto.Show();
         }
         private void veiculosDaEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            V_empresa v_Empresa = new V_empresa();
+            frmveiculoEmpresa v_Empresa = new frmveiculoEmpresa();
             v_Empresa.Show();
         }
         private void veiculosEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VeiculosEPM veiculos = new VeiculosEPM();
+            frmveiculosEmpresaCompleto veiculos = new frmveiculosEmpresaCompleto();
             veiculos.Show();
         }
 
@@ -240,13 +240,13 @@ namespace CT_access
 
         private void enrraSaidaDeFuncionaroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CtVeiculosTerceiro ctVeiculosTerceiro = new CtVeiculosTerceiro();
+            frmveiculosterceiro ctVeiculosTerceiro = new frmveiculosterceiro();
             ctVeiculosTerceiro.Show();
         }
 
         private void entradaESaídaDeFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           Ct_veiculosTerComp veiculosTercerio=new Ct_veiculosTerComp();
+           frmveiculorTerceiroCompleto veiculosTercerio=new frmveiculorTerceiroCompleto();
             veiculosTercerio.Show();
         }
     }

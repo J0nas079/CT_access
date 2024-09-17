@@ -3,11 +3,11 @@ using CT_access.Models;
 
 namespace CT_access.Views
 {
-    public partial class CtVeiculosTerceiro : Form
+    public partial class frmveiculosterceiro : Form
     {
         Ct_veiculosTercDAO veiculosdao = new Ct_veiculosTercDAO();
         Ct_VeiculosTer ct_veiculos = new Ct_VeiculosTer();
-        public CtVeiculosTerceiro()
+        public frmveiculosterceiro()
         {
             InitializeComponent();
         }

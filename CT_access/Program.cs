@@ -11,7 +11,7 @@ namespace CT_access
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form2()); // felipe: sempre iniciar com a form principal
+            Application.Run(new frmcaminhão()); // felipe: sempre iniciar com a form principal
         }
     }
 }

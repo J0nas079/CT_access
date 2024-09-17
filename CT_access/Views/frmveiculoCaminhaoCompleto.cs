@@ -4,9 +4,9 @@ using System.Data;
 
 namespace CT_access
 {
-    public partial class FormCompleto : Form
+    public partial class frmveiculoCaminhaoCompleto : Form
     {
-        public FormCompleto()
+        public frmveiculoCaminhaoCompleto()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
